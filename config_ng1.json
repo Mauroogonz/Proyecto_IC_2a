@@ -1,0 +1,21 @@
+{
+  "task" : {
+    "task_type" : "regression",
+    "function_set" : ["add", "poly"]
+  },
+
+  "poly_optimizer_params" : {
+    "degree": 3,
+    "coef_tol": 1e-6,
+    "regressor": "dso_least_squares"
+  },
+
+  "training" : {
+      
+  },
+  
+  "n_epochs" : 100,
+  "batch_size" : 128,
+  "risk_seeking_epoch" : 20,
+  "risk_factor" : 0.8
+}
