@@ -1,0 +1,46 @@
+epoch,mean_R,mean_R_train,overall_max_R,max_R,best_prog_complexity,mean_complexity,loss,n_physical,n_rewarded,best_prog_of_epoch,overall_best_prog,best_prog_of_epoch_prefix,overall_best_prog_prefix
+0,0.0,0.0,0.0,0.0,15.0,17.786,-0.03347351192470859,1000,0,(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[sub x add add div div x log sqrt add x x x x x],[sub x add add div div x log sqrt add x x x x x]
+1,0.0,0.0,0.0,0.0,24.0,19.132,-0.033438295872586794,1000,0,(((((x-((sin(((((((x/(x/x))+x)/x)+x)+x)/x)))**(0.5)))+x))**(0.5))/x),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[div sqrt add sub x sqrt sin div add add div add div x div x x x x x x x x
+ x]",[sub x add add div div x log sqrt add x x x x x]
+2,0.0,0.0,0.0,0.0,20.0,20.128,-0.03301528428683024,1000,0,sin((log((((x-((((x)**(0.5))*x)+(x/(x/x))))*x)/x))/x)),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[sin div log div mul sub x add mul sqrt x x div x div x x x x x],[sub x add add div div x log sqrt add x x x x x]
+3,0.0,0.0,0.0,0.0,22.0,20.552,-0.033324026761874584,1000,0,(sin(log((((((((x)**(0.5))+(((x/x)-x)/x))+x)+x)*x)/x)))/x),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[div sin log div mul add add add sqrt x div sub div x x x x x x x x x],[sub x add add div div x log sqrt add x x x x x]
+4,0.0,0.0,0.0,0.0,21.0,20.915,-0.03341383128393283,1000,0,sin((x+(log(((((((((x+x)-((x)**(0.5)))-x)-x)-x))**(0.5))-x))-x))),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[sin add x sub log sub sqrt sub sub sub sub add x x sqrt x x x x x x],[sub x add add div div x log sqrt add x x x x x]
+5,0.0,0.0,0.0,0.0,19.0,20.768,-0.03383571438392287,1000,0,sin(((log(((((((((((((x*x)/x)*x)/x))**(0.5))-x))**(0.5))/x))**(0.5))))**(0.5))),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[sin sqrt log sqrt div sqrt sub sqrt div mul div mul x x x x x x x],[sub x add add div div x log sqrt add x x x x x]
+6,0.0,0.0,0.0,0.0,22.0,20.077,-0.03332926511579669,1000,0,((x-((sin((((((log(((x)**(0.5)))-x)+x)/x)+x)+x))+x)-x))/x),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[div sub x sub add sin add add div add sub log sqrt x x x x x x x x x],[sub x add add div div x log sqrt add x x x x x]
+7,0.0,0.0,0.0,0.0,22.0,20.034,-0.0331346161281549,1000,0,(sin(log(((x-((((((((x+x)-x)-x))**(0.5))*x)-x)-x))*x)))+x),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[add sin log mul sub x sub sub mul sqrt sub sub add x x x x x x x x x],[sub x add add div div x log sqrt add x x x x x]
+8,0.0,0.0,0.0,0.0,21.0,20.667,-0.03299516307258814,1000,0,cos((x*(((log(((((x)**(0.5))*((x)**(0.5)))/((x+x)/x)))-x)-x)+x))),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[cos mul x add sub sub log div mul sqrt x sqrt x div add x x x x x x],[sub x add add div div x log sqrt add x x x x x]
+9,0.0,0.0,0.0,0.0,27.0,21.002,-0.033619986891351775,1000,0,(((((((((sin(log(((((((x*x)*x)*x))**(0.5))-x)))+x)/x))**(0.5))*x)-x)/x)+x)/x),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[div add div sub mul sqrt div add sin log sub sqrt mul mul mul x x x x x x
+ x x x x x x]",[sub x add add div div x log sqrt add x x x x x]
+10,0.0,0.0,0.0,0.0,21.0,21.706,-0.033355790640082136,1000,0,((log((x-(cos(((((x*(x-x))/x)+x)+x))-x)))-x)*x),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[mul sub log sub x sub cos add add div mul x sub x x x x x x x x],[sub x add add div div x log sqrt add x x x x x]
+11,0.0,0.0,0.0,0.0,19.0,22.658,-0.0332549771252295,1000,0,(cos((x+log(((x+(((x/(x*x))*x)*x))/x))))/x),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[div cos add x log div add x mul mul div x mul x x x x x x],[sub x add add div div x log sqrt add x x x x x]
+12,0.0,0.0,0.0,0.0,27.0,22.929,-0.03291922507578513,1000,0,log(((cos((((((((((((((x/x)*x))**(0.5))+x)+x))**(0.5))-x)*x)+x)-x)-x))/x)*x)),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[log mul div cos sub sub add mul sub sqrt add add sqrt mul div x x x x x x
+ x x x x x x]",[sub x add add div div x log sqrt add x x x x x]
+13,0.0,0.0,0.0,0.0,24.0,22.655,-0.033541117281909436,1000,0,(sin(log(((((((((((((((x)**(0.5))*x))**(0.5))/x)/x)-x)*x))**(0.5))-x)*x)+x)))+x),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[add sin log add mul sub sqrt mul sub div div sqrt mul sqrt x x x x x x x
+ x x x]",[sub x add add div div x log sqrt add x x x x x]
+14,0.0,0.0,0.0,0.0,18.0,21.561,-0.033300952045351245,1000,0,(((x*cos((((x+((((x)**(0.5))+x)*(x-x)))-x)/x))))**(0.5)),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[sqrt mul x cos div sub add x mul add sqrt x x sub x x x x],[sub x add add div div x log sqrt add x x x x x]
+15,0.0,0.0,0.0,0.0,24.0,22.039,-0.03361544577796829,1000,0,((log(((((cos(((((((((x)**(0.5))*(x*x)))**(0.5))*x)-x)*x))+x)/x)/x)*x)))**(0.5)),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[sqrt log mul div div add cos mul sub mul sqrt mul sqrt x mul x x x x x x
+ x x x]",[sub x add add div div x log sqrt add x x x x x]
+16,0.0,0.0,0.0,0.0,26.0,22.857,-0.033287769723907144,1000,0,log(sin(((((((((((((((((x*x)+x)+x)/x)+x))**(0.5))-x)/x))**(0.5)))**(0.5))/x)+x)-x))),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[log sin sub add div sqrt sqrt div sub sqrt add div add add mul x x x x x
+ x x x x x x]",[sub x add add div div x log sqrt add x x x x x]
+17,0.0,0.0,0.0,0.0,27.0,23.21,-0.03312663136797517,1000,0,((cos((((((x/log(((((((((x*x)*x))**(0.5))-x)/x)-x)+x))))**(0.5))*x)+x))/x)+x),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[add div cos add mul sqrt div x log add sub div sub sqrt mul mul x x x x x
+ x x x x x x]",[sub x add add div div x log sqrt add x x x x x]
+18,0.0,0.0,0.0,0.0,27.0,23.862,-0.03321785493526444,1000,0,cos((((log((((x+(((((((x*((x-x)-x))/x)*x)-x)*x)*x)/x)))**(0.5)))+x))**(0.5))),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[cos sqrt add log sqrt add x div mul mul sub mul div mul x sub sub x x x x
+ x x x x x x]",[sub x add add div div x log sqrt add x x x x x]
+19,0.0,0.0,0.0,0.0,27.0,24.138,-0.03330874248959616,1000,0,(log(cos(((((((x+((((((((x-x))**(0.5))/x)-x)+x)*x)*x))+x))**(0.5))/x)+x)))/x),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[div log cos add div sqrt add add x mul mul add sub div sqrt sub x x x x x
+ x x x x x x]",[sub x add add div div x log sqrt add x x x x x]
+20,0.0,0.0,0.0,0.0,27.0,23.089,-0.033403498582255164,1000,0,(x+((((log(((((((cos(x)/x)/(x-x))+x)/x)+x)+x))+x)+x)/x)*x)),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[add x mul div add add log add add div add div div cos x x sub x x x x x x
+ x x x x]",[sub x add add div div x log sqrt add x x x x x]
+21,0.0,0.0,0.0,0.0,14.0,22.91,-0.03332786424470206,1000,0,(((((((sin(log(x))-x)/(x+cos(x))))**(0.5))-x))**(0.5)),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[sqrt sub sqrt div sub sin log x x add x cos x x],[sub x add add div div x log sqrt add x x x x x]
+22,0.0,0.0,0.0,0.0,7.0,24.02,-0.03346138434900997,1000,0,(log(cos(x))/((((x)**(0.5)))**(0.5))),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[div log cos x sqrt sqrt x],[sub x add add div div x log sqrt add x x x x x]
+23,0.0,0.0,0.0,0.0,24.0,24.307,-0.033017476076880284,1000,0,(x-((log((((x)**(0.5))+(sin(((((((((x+x))**(0.5)))**(0.5))+x)/x)-x))-x)))+x)+x)),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[sub x add add log add sqrt x sub sin sub div add sqrt sqrt add x x x x x
+ x x x]",[sub x add add div div x log sqrt add x x x x x]
+24,0.0,0.0,0.0,0.0,28.0,24.978,-0.033461273369913565,1000,0,log(((((x)**(0.5))-(sin((((((x/((((x/x)/x)*x)*x))+x)*x)/x)/x))*x))-x)),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[log sub sub sqrt x mul sin div div mul add div x mul mul div div x x x x
+ x x x x x x x]",[sub x add add div div x log sqrt add x x x x x]
+25,0.0,0.0,0.0,0.0,29.0,24.708,-0.03329427740906379,1000,0,((log(sin((((((((((((((x+(x+x)))**(0.5))/x)-x)*x)-x)+x)-x)+x)-x)+x)+x))))**(0.5)),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[sqrt log sin add add sub add sub add sub mul sub div sqrt add x add x x x
+ x x x x x x x x x]",[sub x add add div div x log sqrt add x x x x x]
+26,0.0,0.0,0.0,0.0,17.0,22.195,-0.03313190105030982,1000,0,(cos(x)*log((((x)**(0.5))/((sin(((x+x)-x))*x)/x)))),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[mul cos x log div sqrt x div mul sin sub add x x x x x],[sub x add add div div x log sqrt add x x x x x]
+27,0.0,0.0,0.0,0.0,26.0,26.431,-0.03344148128469927,1000,0,((sin(((((((log((((((((((((x)**(0.5))-x)-x)/x)*x)+x)*x)+x))**(0.5))))**(0.5)))**(0.5)))**(0.5)))-x)/x),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[div sub sin sqrt sqrt sqrt log sqrt add mul add mul div sub sub sqrt x x
+ x x x x x x x x]",[sub x add add div div x log sqrt add x x x x x]
+28,0.0,0.0,0.0,0.0,31.0,27.462,-0.03340121361372454,1000,0,(x/(((cos(log((((((((((((((x*x)/x)+x)/x)/x)+x))**(0.5))+x)+x))**(0.5))+x)))/x)/x)+x)),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),"[div x add div div cos log add sqrt add add sqrt add div div add div mul x
+ x x x x x x x x x x x x]",[sub x add add div div x log sqrt add x x x x x]
+29,0.0,0.0,0.0,0.0,23.0,26.258,-0.033889455031740554,1000,0,log((((x)**(0.5))-((((cos(((x-(x+(((x*x)+x)*x)))/x))/x)-x))**(0.5)))),(x-((((x/log((((x+x))**(0.5))))/x)+x)+x)),[log sub sqrt x sqrt sub div cos div sub x add x mul add mul x x x x x x x],[sub x add add div div x log sqrt add x x x x x]
