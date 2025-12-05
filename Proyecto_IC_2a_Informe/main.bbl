@@ -1,0 +1,60 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bazin et~al.(2009)Bazin, Palanque-Delabrouille, et~al.]{10}
+G.~Bazin, N.~Palanque-Delabrouille, et~al.
+\newblock The core-collapse rate from the supernova legacy survey.
+\newblock \emph{Astronomy \& Astrophysics}, 499\penalty0 (3):\penalty0 653--660, 2009.
+\newblock \doi{10.1051/0004-6361/200911847}.
+\newblock URL \url{http://dx.doi.org/10.1051/0004-6361/200911847}.
+
+\bibitem[la~Sotta~Vargas(2023)]{8}
+Rafael Ignacio~De la~Sotta~Vargas.
+\newblock Optimización de modelo térmico paramétrico de baterías de litio mediante algoritmos evolutivos.
+\newblock Tesis de magíster en ciencia de datos / memoria de ingeniería civil eléctrica, Universidad de Chile, Facultad de Ciencias Físicas y Matemáticas, 2023.
+\newblock URL \url{https://repositorio.uchile.cl/handle/2250/194401}.
+\newblock Disponible en línea en el Repositorio Académico de la Universidad de Chile.
+
+\bibitem[Madrid(2025)]{9}
+Lucas Antonio~Hormaz{\'a}bal Madrid.
+\newblock Optimización mediante regresión simbólica de un modelo térmico-paramétrico de baterías de litio incluyendo desgaste.
+\newblock Memoria de ingeniería civil eléctrica, Universidad de Chile, Facultad de Ciencias Físicas y Matemáticas, 2025.
+\newblock URL \url{https://repositorio.uchile.cl/handle/2250/205479}.
+\newblock Disponible en línea en el Repositorio Académico de la Universidad de Chile.
+
+\bibitem[Martius and Lampert(2016)]{1}
+Georg Martius and Christoph~H. Lampert.
+\newblock Extrapolation and learning equations, 2016.
+\newblock URL \url{https://arxiv.org/abs/1610.02995}.
+
+\bibitem[Petersen et~al.(2021)Petersen, Landajuela, Mundhenk, Santiago, Kim, and Kim]{5}
+Brenden~K. Petersen, Mikel Landajuela, T.~Nathan Mundhenk, Claudio~P. Santiago, Soo~K. Kim, and Joanne~T. Kim.
+\newblock Deep symbolic regression: Recovering mathematical expressions from data via risk-seeking policy gradients, 2021.
+\newblock URL \url{https://arxiv.org/abs/1912.04871}.
+
+\bibitem[Sahoo et~al.(2018)Sahoo, Lampert, and Martius]{2}
+Subham~S. Sahoo, Christoph~H. Lampert, and Georg Martius.
+\newblock Learning equations for extrapolation and control, 2018.
+\newblock URL \url{https://arxiv.org/abs/1806.07259}.
+
+\bibitem[Tenachi et~al.(2023)Tenachi, Ibata, and Diakogiannis]{3}
+Wassim Tenachi, Rodrigo Ibata, and Foivos~I. Diakogiannis.
+\newblock Deep symbolic regression for physics guided by units constraints: Toward the automated discovery of physical laws.
+\newblock \emph{The Astrophysical Journal}, 959\penalty0 (2):\penalty0 99, December 2023.
+\newblock ISSN 1538-4357.
+\newblock \doi{10.3847/1538-4357/ad014c}.
+\newblock URL \url{http://dx.doi.org/10.3847/1538-4357/ad014c}.
+
+\bibitem[Uy et~al.(2011)Uy, Hoai, O'Neill, Mckay, and Galv\'{a}n-L\'{o}pez]{7}
+Nguyen~Quang Uy, Nguyen~Xuan Hoai, Michael O'Neill, R.~I. Mckay, and Edgar Galv\'{a}n-L\'{o}pez.
+\newblock Semantically-based crossover in genetic programming: application to real-valued symbolic regression.
+\newblock \emph{Genetic Programming and Evolvable Machines}, 12\penalty0 (2):\penalty0 91–119, June 2011.
+\newblock ISSN 1389-2576.
+\newblock \doi{10.1007/s10710-010-9121-2}.
+\newblock URL \url{https://doi.org/10.1007/s10710-010-9121-2}.
+
+\end{thebibliography}

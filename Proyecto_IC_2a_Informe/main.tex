@@ -1,0 +1,91 @@
+% Template:     Informe LaTeX
+% Documento:    Archivo principal
+% Versión:      8.3.8 (07/02/2025)
+% Codificación: UTF-8
+%
+% Autor: Pablo Pizarro R.
+%        pablo@ppizarror.com
+%
+% Manual template: [https://latex.ppizarror.com/informe]
+% Licencia MIT:    [https://opensource.org/licenses/MIT]
+
+% CREACIÓN DEL DOCUMENTO
+\documentclass[
+	spanish, % Idioma: spanish, english, etc.
+	letterpaper, oneside
+]{article}
+\usepackage{amsmath}
+
+% INFORMACIÓN DEL DOCUMENTO
+\def\documenttitle {Métodos Neuronales para Regresión Simbólica}
+\def\documentsubtitle {}
+\def\documentsubject {Proyecto Inteligencia computacional}
+
+\def\documentauthor {Nombre del autor}
+\def\coursename {Inteligencia Computacional}
+\def\coursecode {EL-4106}
+
+\def\universityname {Universidad de Chile}
+\def\universityfaculty {Facultad de Ciencias Físicas y Matemáticas}
+\def\universitydepartment {Departamento de Ingeniería Eléctrica}
+\def\universitydepartmentimage {departamentos/die}
+\def\universitydepartmentimagecfg {height=1.57cm}
+\def\universitylocation {Santiago de Chile}
+
+% INTEGRANTES, PROFESORES Y FECHAS
+\def\authortable {
+	\begin{tabular}{ll}
+		Integrantes:
+		& \begin{tabular}[t]{l}
+			Benjamín Bruhn \\
+			Mauricio González
+		\end{tabular} \\
+		Profesor:
+		& \begin{tabular}[t]{l}
+			Pablo Estevez
+		\end{tabular} \\
+		Auxiliar:
+		& \begin{tabular}[t]{l}
+			Pablo Cornejo
+		\end{tabular} \\
+		Ayudantes:
+		& \begin{tabular}[t]{l}
+			Diego Castillo\\
+                Rodrigo Catalán\\ 
+                Sebastián Guzmán\\ 
+                Francisco Soto\\ 
+                Bruno Araya\\ 
+                Jorge Espejo
+		\end{tabular} \\
+		& \\
+		\multicolumn{2}{l}{Fecha de entrega: \today} \\
+		\multicolumn{2}{l}{\universitylocation}
+	\end{tabular}
+}
+
+% IMPORTACIÓN DEL TEMPLATE
+\input{config/template}
+
+% INICIO DE PÁGINAS
+\begin{document}
+
+% PORTADA
+\templatePortrait
+
+% CONFIGURACIÓN DE PÁGINA Y ENCABEZADOS
+%\templatePagecfg
+
+% TABLA DE CONTENIDOS - ÍNDICE
+\templateIndex
+
+% CONFIGURACIONES FINALES
+\templateFinalcfg
+
+% ======================= INICIO DEL DOCUMENTO =======================
+
+\input{Estructura}
+
+\newpage
+\bibliography{library}
+% FIN DEL DOCUMENTO
+\end{document}
