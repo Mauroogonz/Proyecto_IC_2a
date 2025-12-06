@@ -79,7 +79,7 @@ Por el momento los datos de las baterías solo fueron entrenados con EQL. En est
 
 \newpage
 % ============================================================
-\section{Metodología y Arquitectura}
+\section{Metodología y Arquitecturas}
 
 \subsection{Equation Learner (EQL)}
 % Explica la estructura del modelo:
@@ -240,6 +240,95 @@ Para la implementación se utilizó el paquete oficial \texttt{physo} (Physical 
 
 Todo el proceso se desarrolló en Google Colab, garantizando la reproducibilidad del experimento mediante la instalación de la librería \texttt{physo} y el uso del mismo conjunto de datos experimentales.
 
+
+\subsection{Growing Interpretable Neural Network (GINN-LP)}
+
+El método GINN-LP (Growing Interpretable Neural Network for Laurent Polynomials), propuesto recientemente por Ranasinghe et al. \cite{}, representa un enfoque híbrido que combina la flexibilidad de las redes neuronales con una estructura fuertemente restringida para la búsqueda de polinomios de Laurent multivariables. A diferencia de EQL, que explora un espacio de funciones generales (seno, coseno, etc.), GINN-LP se especializa en descubrir expresiones de la forma:
+
+\begin{equation}
+    f(\mathbf{x}) = \sum_{k=1}^{K} c_k \prod_{i=1}^{D} x_i^{p_{ki}}
+\end{equation}
+
+donde $c_k$ son coeficientes reales y $p_{ki}$ son potencias enteras (positivas o negativas). Esta especialización lo hace particularmente robusto para problemas físicos donde las leyes de potencias y las relaciones polinomiales son predominantes, como es el caso de las correlaciones de números adimensionales (Nusselt, Reynolds).
+
+\subsubsection{Arquitectura y Algoritmo de Crecimiento}
+
+La arquitectura de GINN-LP no es estática; utiliza un algoritmo de crecimiento (growing algorithm) que ajusta la complejidad del modelo a los datos. El proceso consta de dos mecanismos principales:
+
+\begin{enumerate}
+    \item \textbf{Optimización de Parámetros:} Para una estructura fija (número de términos $K$), la red optimiza tanto los coeficientes $c_k$ como los exponentes $p_{ki}$ mediante descenso de gradiente. Una característica distintiva es que los exponentes se relajan a valores continuos durante el entrenamiento y se discretizan posteriormente para recuperar la forma simbólica exacta.
+    
+    \item \textbf{Crecimiento Estructural:} El modelo comienza con una estructura simple y añade nuevos términos ("bloques" neuronales que representan monomios) iterativamente si el error de ajuste no satisface un criterio de convergencia. Esto permite que el modelo encuentre el equilibrio entre parsimonia (pocos términos) y precisión, evitando el sobreajuste típico de polinomios de alto grado.
+\end{enumerate}
+
+\subsubsection{Aspectos de implementación y configuración}
+
+Para este proyecto, se utilizó la librería oficial \texttt{ginnlp} en Python. La implementación se integró al flujo de trabajo existente, adaptando los scripts de entrenamiento para manejar tanto las funciones sintéticas de Nguyen como los datos experimentales de baterías.
+
+\textbf{Pre-procesamiento de datos:}
+Un aspecto crítico observado durante la implementación fue la sensibilidad del modelo al dominio de entrada, especialmente para exponentes fraccionarios o negativos. Basado en los scripts de experimentación (\texttt{run\_nguyen\_train.py}), se aplicó un desplazamiento (shift) a las variables de entrada:
+\begin{equation}
+    X_{input} = X_{raw} + \delta
+\end{equation}
+donde $\delta = 1.1$ para los benchmarks de Nguyen. Este desplazamiento asegura que las entradas sean estrictamente positivas, evitando singularidades en el origen o errores de dominio en potencias fraccionarias, facilitando la convergencia del gradiente.
+
+\textbf{Configuración de Hiperparámetros:}
+El entrenamiento se configuró con los siguientes parámetros base, identificados en el script de ejecución:
+\begin{itemize}
+    \item \textbf{Épocas (\texttt{num\_epochs}):} 250, permitiendo suficiente tiempo para la estabilización de los pesos.
+    \item \textbf{Iteraciones de entrenamiento (\texttt{train\_iter}):} 3, controlando los ciclos de refinamiento de la estructura.
+    \item \textbf{Optimización:} Se utilizó el optimizador interno de la librería, el cual gestiona la cuantización de los exponentes para recuperar la ecuación simbólica final (\texttt{model.recovered\_eq}).
+\end{itemize}
+
+Para la evaluación, las ecuaciones recuperadas fueron evaluadas utilizando un entorno numérico estándar (\texttt{numpy}), asegurando que las métricas de NRMSE y $R^2$ fueran comparables con las obtenidas mediante EQL y PhySO.
+
+\subsection{Operon (C++ Symbolic Regression Framework)}
+
+En este trabajo se utilizó \textbf{Operon}, un framework de Regresión Simbólica de alto rendimiento desarrollado en C++ moderno, diseñado específicamente para manejar grandes poblaciones y ejecuciones prolongadas con una eficiencia computacional superior a las implementaciones tradicionales basadas en Python puro.
+
+\subsubsection{Arquitectura y Codificación Lineal}
+
+A diferencia de los enfoques clásicos de Programación Genética (GP) que representan las expresiones matemáticas como árboles de objetos enlazados mediante punteros, Operon implementa una \textbf{codificación lineal} (linear encoding). 
+
+En esta arquitectura, los árboles sintácticos se representan como arreglos contiguos en memoria utilizando notación postfija (Reverse Polish Notation). Esta decisión de diseño tiene dos ventajas críticas para el rendimiento:
+\begin{itemize}
+    \item \textbf{Localidad espacial:} Al ser memoria contigua, se maximiza el uso de la caché del procesador, reduciendo drásticamente los fallos de caché (cache misses) durante la evaluación.
+    \item \textbf{Evaluación vectorizada:} Permite el uso eficiente de instrucciones SIMD y paralelismo a nivel de datos para evaluar miles de individuos simultáneamente.
+\end{itemize}
+
+\subsubsection{Algoritmo Evolutivo y Selección de Pareto}
+
+El núcleo del algoritmo es un proceso evolutivo generacional. Sin embargo, para mitigar el problema del \textit{bloat} (crecimiento descontrolado de la complejidad de las fórmulas sin ganancia significativa de precisión), nuestra metodología se alejó de la minimización del error cuadrático medio (MSE) como único objetivo.
+
+En su lugar, se implementó una estrategia de selección multiobjetivo basada en el \textbf{Frente de Pareto} , optimizando simultáneamente dos variables en conflicto:
+\begin{enumerate}
+    \item \textbf{Precisión:} Minimizando el RMSE (Root Mean Squared Error).
+    \item \textbf{Simplicidad:} Minimizando la longitud del árbol (número de nodos).
+\end{enumerate}
+
+Esta estrategia, fundamentada en el principio de parsimonia (Navaja de Ockham), permitió seleccionar modelos que ofrecen el mejor equilibrio teórico, descartando aproximaciones complejas (como series de Taylor truncadas) en favor de las estructuras analíticas exactas subyacentes.
+
+\subsubsection{Aspectos de implementación y configuración}
+
+La implementación se realizó utilizando la interfaz de Python \texttt{pyoperon}, integrando el núcleo de C++ con el flujo de trabajo de análisis de datos en Python. Un desafío técnico crítico abordado fue la interoperabilidad de memoria: se implementó una sanitización estricta de los datos de entrada, forzando arreglos \texttt{C-contiguous} de doble precisión (\texttt{float64}) para evitar errores de segmentación y garantizar la correcta lectura de variables ($X_1, X_2, \dots$) por parte del motor de C++.
+
+La configuración experimental utilizada para los benchmarks de Nguyen y los casos reales se detalla en la Tabla \ref{tab:params_operon}.
+
+\begin{table}[H]
+\centering
+\caption{Configuración de hiperparámetros para Operon.}
+\label{tab:params_operon}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Parámetro} & \textbf{Valor / Configuración} \\ \hline
+Tamaño de Población & 3000 individuos \\ \hline
+Generaciones & 4000 \\ \hline
+Límite de Longitud ($L_{max}$) & 25 nodos  \\ \hline
+Optimización Numérica & 10 iteraciones \\ \hline
+\end{tabular}
+\end{table}
+
+
 \subsection{Configuración experimental}
 % Describe cómo se entrenaron los modelos:
 % - Número de muestras por función (Nguyen).
@@ -247,18 +336,45 @@ Todo el proceso se desarrolló en Google Colab, garantizando la reproducibilidad
 % - Semilla aleatoria (para reproducibilidad).
 % - Herramientas usadas (Python, TensorFlow/Keras, Google Colab, GPU local).
 
+Se realizaron los experimentos sobre el conjunto de funciones sintéticas del benchmark de Nguyen~(1--12). Cada función fue entrenada en el rango $[-1,1]$ y evaluada en el rango extendido $[-2,2]$. 
+
+
+
+\subsection{Métricas de evaluación}
+
+La evaluación del modelo se realiza mediante la comparación entre los valores predichos y los valores reales de cada dataset, tanto para los conjuntos sintéticos de Nguyen como para los datos experimentales del número de Nusselt. Los modelos se entrenan con datos normalizados (media cero y varianza unitaria) y se validan utilizando un 80\% de las muestras para entrenamiento y un 20\% para prueba, lo que permite analizar el comportamiento del modelo en condiciones de extrapolación.
+
+Las métricas utilizadas para cuantificar el desempeño fueron el error cuadrático medio normalizado (NRMSE) y el coeficiente de determinación ($R^2$), definidos como:
+\begin{equation}
+NRMSE = \frac{\sqrt{\text{MSE}(y,\hat{y})}}{y_{\max}-y_{\min}}, 
+\qquad
+R^2 = 1 - \frac{\sum(y-\hat{y})^2}{\sum(y-\bar{y})^2}.
+\end{equation}
+
+Estas métricas permiten evaluar tanto la fidelidad del ajuste como la capacidad de generalización del modelo. 
+Además, se generaron visualizaciones gráficas que muestran la comparación entre los valores reales y los valores predichos, representadas en forma de dispersión y en curvas de ajuste. Estas gráficas permiten observar el grado de alineación con la diagonal ideal ($y = \hat{y}$) y facilitan la interpretación cualitativa del desempeño del modelo.
+
+Asimismo, el modelo entrega de manera automática la \textbf{fórmula simbólica obtenida} mediante el método interno \texttt{model.formula()}, el cual reconstruye la ecuación aprendida a partir de los pesos no nulos en cada capa. De esta forma, junto con las métricas de error y las gráficas de ajuste, se reporta la ecuación final descubierta por el EQL, lo que permite interpretar directamente la relación funcional aprendida por la red. 
+
+Para los casos experimentales de Nusselt, se añadieron representaciones en función del número de Reynolds y del parámetro geométrico $S$, ---
 
 \newpage
 % ============================================================
-\section{Resultados Preliminares}
+\section{Resultados}
 
 \subsection{Funciones Nguyen}
 % Incluye tablas con métricas NRMSE y R² para Nguyen-1 a Nguyen-10.
 % Muestra ejemplos de ecuaciones recuperadas y sus gráficos.
 
-Se realizaron experimentos sobre el conjunto de funciones sintéticas del benchmark de Nguyen~(1--10) utilizando los modelos \textit{Equation Learner} (EQL) y \textit{PhySO}. 
-Cada función fue entrenada en el rango $[-1,1]$ y evaluada en el rango extendido $[-2,2]$. 
-La Tabla~\ref{tab:nguyen_metrics} presenta los valores de error cuadrático medio normalizado (NRMSE) y coeficiente de determinación ($R^2$) obtenidos en el conjunto de prueba para ambos modelos.
+Los modelos considerados fueron evaluados utilizando el conjunto de funciones del benchmark de Nguyen, con el objetivo de analizar su capacidad para recuperar ecuaciones en distintos niveles de complejidad. Para cada modelo se obtuvieron las métricas de desempeño correspondientes, las cuales se presentan de manera individual en las tablas incluidas en el Anexo, junto con los gráficos asociados a cada función del benchmark. Estas visualizaciones permiten apreciar el ajuste obtenido por cada método y la consistencia de las expresiones recuperadas respecto de los datos sintéticos. En conjunto, los resultados permiten comparar el comportamiento global de las distintas aproximaciones de regresión simbólica, destacando sus diferencias en precisión, estabilidad y capacidad de generalización.
+
+Los modelos considerados fueron evaluados utilizando el conjunto de funciones del benchmark de Nguyen, con el objetivo de analizar su capacidad para recuperar ecuaciones en distintos niveles de complejidad. Para cada modelo se obtuvieron las métricas de desempeño correspondientes, las cuales se presentan de manera individual en las tablas incluidas en el Anexo, junto con los gráficos asociados a cada función del benchmark. De forma adicional, se aplicó la misma metodología al caso de baterías, evaluando el ajuste de los modelos sobre los datos termodinámicos y fluidodinámicos asociados, cuyos resultados también se encuentran detallados en el Anexo. En conjunto, estas evaluaciones permiten comparar el comportamiento global de las distintas aproximaciones de regresión simbólica, destacando sus diferencias en precisión, estabilidad y capacidad de generalización en ambos escenarios de estudio.
+
+
+
+TIRARÍA TODO ESTO PARA EL ANEXO.
+
+ La Tabla~\ref{tab:nguyen_metrics} presenta los valores de error cuadrático medio normalizado (NRMSE) y coeficiente de determinación ($R^2$) obtenidos en el conjunto de prueba para ambos modelos.
 
 \begin{table}[H]
     \centering
