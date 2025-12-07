@@ -88,7 +88,9 @@ Por el momento los datos de las baterías solo fueron entrenados con EQL. En est
 % - Fases de entrenamiento: T₀ (warm-up), T₁ (sparsity L1), T₂ (fine-tune L0).
 % - Parámetros controlados: número de capas, funciones excluidas, lambda (regularización).
 
-El método \textit{Equation Learner} (EQL) propuesto por Martius y Lampert~\cite{1}, junto con su extensión para funciones racionales (\textbf{EQL-Div}) presentada por Sahoo et al.~\cite{2}, corresponde a una arquitectura neuronal diseñada específicamente para la regresión simbólica, cuyo objetivo es aprender ecuaciones interpretables a partir de datos. A diferencia de las redes neuronales tradicionales, estos modelos no buscan aproximar valores mediante combinaciones no lineales arbitrarias, sino que restringen sus operaciones a un conjunto de funciones matemáticas elementales (identidad, seno, coseno, multiplicación y, en el caso de EQL-Div, división). Esto permite que la red reconstruya expresiones analíticas exactas, incluyendo leyes físicas racionales, y generalice eficazmente más allá del dominio de entrenamiento.
+El método \textit{Equation Learner} (EQL) propuesto por Martius y Lampert~\cite{1}, junto con su extensión para funciones racionales (\textbf{EQL-Div}) presentada por Sahoo et al.~\cite{2}, corresponde a una arquitectura neuronal diseñada específicamente para la regresión simbólica, cuyo objetivo es aprender ecuaciones interpretables a partir de datos. \\
+
+A diferencia de las redes neuronales tradicionales, estos modelos no buscan aproximar valores mediante combinaciones no lineales arbitrarias, sino que restringen sus operaciones a un conjunto de funciones matemáticas elementales (identidad, seno, coseno, multiplicación y, en el caso de EQL-Div, división). Esto permite que la red reconstruya expresiones analíticas exactas, incluyendo leyes físicas racionales, y generalice eficazmente más allá del dominio de entrenamiento.
 
 La implementación se realizó en \texttt{Python} empleando la librería \texttt{TensorFlow}, basándose en la estructura del repositorio oficial (\texttt{EQL-TensorFlow})~\cite{3} con modificaciones de compatibilidad para Python~3.12 y ejecución en GPU en Google~Colab.
 
@@ -116,13 +118,6 @@ Estas funciones permiten que la red construya expresiones complejas, tales como 
 El número de combinaciones posibles por capa está determinado por la configuración de la red (ancho de capa), que controla cuántas unidades binarias y unarias se construyen. 
 Así, la arquitectura regula la capacidad simbólica del modelo: valores altos permiten combinaciones más complejas, mientras que valores bajos inducen ecuaciones más simples.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\textwidth]{img/EQL.png}
-    \caption{Arquitectura general del modelo \textit{Equation Learner} (EQL). El esquema ilustra el flujo de información a través de capas simbólicas. En la variante EQL-Div, las unidades de multiplicación se complementan con unidades de división, permitiendo la formación de denominadores.}
-    \label{fig:eql_architecture}
-\end{figure}
-
 \subsubsection{Fases de entrenamiento y regularización}
 
 El entrenamiento de estos modelos se realiza en tres fases consecutivas que controlan la complejidad y parsimonia de la ecuación resultante. Para EQL-Div, se añade un mecanismo crítico de estabilidad numérica:
@@ -147,71 +142,48 @@ Sobre esta base, se incorporaron rutinas auxiliares y scripts propios que permit
 \textbf{Configuración de Hiperparámetros:}
 El entrenamiento se configuró para EQL normal con los siguientes parámetros base, identificados en el script de ejecución:
 \begin{itemize}
-    \item \textbf{Épocas (\texttt{num\_epochs}):} 10000, repartidas en la estructura 0-25\%-95\%-100\% que se recomienda en la literatura.
+    \item \textbf{Épocas (\texttt{num\_epochs}):} 10000, repartidas en la estructura que se recomienda en la literatura, es decir, 2500 para la primera fase, 7000 para la segunda y 500 para la tercera.
     \item \textbf{Capas (\texttt{capas}):} Se utilizó una estructura de 3 capas ocultas con una distribución de ancho 1-2-1. Buscano poder encontrar todas las configuraciones de Nguyen.
     \item \textbf{Lambda y atol} (\texttt{lambda}, \texttt{atol}): Se utilizaron valores de 0.001 y 0.0001 respectivamente, los cuales se mantuvieron constantes en todos los experimentos.
 \end{itemize}
 
-Para EQL-Div, se emplearon parámetros similares, ajustando el número de épocas a 8000, las capas utilizadas fueron 3 pero para algunas funciones se uso amplitud 1 y otras 2 (en EQL division se puede configurar una unica amplitud para todas las capas), esto due adaptado según la complejidad de las funciones trabajadas, además se mantuvieron los mismos valores de lambda y atol.\\
+Para EQL-Div, se emplearon parámetros similares, ajustando el número de épocas a 8000 y repartiendo en la misma proporción por fasses, las capas utilizadas fueron 3 pero para algunas funciones se uso amplitud 1 y otras 2 (en EQL division se puede configurar una unica amplitud para todas las capas), esto due adaptado según la complejidad de las funciones trabajadas, además se mantuvieron los mismos valores de lambda y atol.\\
 
 
 
 
 
 
-\subsection{Physical Symbolic Optimization (Φ-SO)}
-% Explica la estructura del modelo:
+\subsection{Deep Symbolic Regression (DSR) y Physical Symbolic Optimization ($\Phi$-SO)}
 
-El método Physical Symbolic Optimization (Φ-SO), propuesto por Tenachi et al.~\cite{2}, es un entorno diseñado para la regresión simbólica, enfocado en recuperar expresiones analíticas a partir de datos físicos. A diferencia de otros métodos que exploran un vasto espacio de funciones, Φ-SO integra el análisis dimensional como un componente central de su proceso de búsqueda. El sistema está construido para proponer únicamente soluciones donde las unidades físicas son consistentes por construcción, eliminando expresiones físicamente imposibles y restringiendo enormemente el espacio de búsqueda.
+La regresión simbólica profunda se fundamenta en el método \textit{Deep Symbolic Regression} (DSR)~\cite{4}, el cual plantea la búsqueda de ecuaciones como un problema de generación secuencial. Sobre esta base arquitectural, el método \textit{Physical Symbolic Optimization} ($\Phi$-SO)~\cite{5} extiende el modelo integrando el análisis dimensional como una restricción estructural, eliminando del espacio de búsqueda aquellas expresiones que resultan físicamente inconsistentes. Ambos modelos, implementados en \texttt{PyTorch}, comparten un núcleo algorítmico basado en redes recurrentes y aprendizaje por refuerzo.
 
-El modelo se implementó en \texttt{Python} utilizando la librería \texttt{PyTorch}. Su enfoque se basa en técnicas de aprendizaje por refuerzo profundo (Deep Reinforcement Learning) para aprender y aplicar las restricciones de unidades durante la generación de ecuaciones.
+\subsubsection{Arquitectura, generación de secuencias y entrenamiento por RL}
 
-\subsubsection{Arquitectura y generación de expresiones}
+El núcleo del sistema es una Red Neuronal Recurrente (RNN) que actúa como controlador generativo, construyendo ecuaciones token por token en notación prefija (\textit{Polish notation}). En cada paso de la secuencia, la RNN emite una distribución de probabilidad sobre la biblioteca de operadores y variables.\\
 
-El núcleo de Φ-SO es una Red Neuronal Recurrente (RNN) que genera expresiones simbólicas. Las ecuaciones se representan como secuencias de símbolos (tokens) en notación prefija (Polish notation). En cada paso de la generación, la RNN recibe información contextual sobre la expresión parcial que se está construyendo, incluyendo el token padre, el token hermano y, fundamentalmente, las unidades físicas requeridas para el siguiente token.
+Aquí reside la innovación de $\Phi$-SO respecto a DSR: mientras el modelo base aplica filtros puramente sintácticos, $\Phi$-SO introduce un \textbf{prior de unidades físicas}. Este mecanismo recibe información contextual sobre las unidades requeridas y aplica una máscara que anula la probabilidad de seleccionar tokens que violen la coherencia dimensional~\cite{5}. De este modo, la red aprende activamente las reglas del análisis dimensional, explorando únicamente la sub-región del espacio de funciones que es físicamente viable.
 
-La RNN produce una distribución de probabilidad categórica sobre toda la biblioteca de tokens disponibles (operadores, variables, constantes). La innovación clave es la aplicación de un "prior de unidades físicas" sobre esta distribución. Este prior actúa como una máscara que anula la probabilidad de seleccionar tokens que violarían la coherencia dimensional de la ecuación. De este modo, la red aprende activamente las reglas del análisis dimensional y solo explora soluciones físicamente viables.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{PhySO.png}
-    \caption{Esquema de generación de expresiones en Φ-SO. La RNN recibe información contextual (incluyendo unidades) y genera una distribución de probabilidad. Un prior de unidades físicas filtra esta distribución antes de muestrear el siguiente token. Adaptado de \cite{2}.}
-    \label{fig:physo_architecture}
-\end{figure}
-
-\subsubsection{Entrenamiento por Aprendizaje por Refuerzo}
-
-A diferencia del entrenamiento por fases de EQL, Φ-SO utiliza una estrategia de aprendizaje por refuerzo. El proceso no se divide en etapas de regularización, sino que se optimiza mediante un gradiente de política (policy gradient) de tipo "risk-seeking" (búsqueda de riesgo). El entrenamiento sigue un ciclo iterativo:
-
+Dado que el espacio de ecuaciones es discreto y no diferenciable, la optimización se realiza mediante \textbf{Aprendizaje por Refuerzo Profundo}. El proceso se modela como un ciclo iterativo de decisión:
 \begin{enumerate}
-    \item \textbf{Generación:} La RNN (el agente) muestrea un lote de expresiones (acciones) candidatas, guiada por el prior de unidades.
-    \item \textbf{Evaluación:} Para cada expresión generada, se optimizan sus constantes libres para ajustar los datos de entrada.
-    \item \textbf{Recompensa:} Se calcula una recompensa (reward) para cada expresión, basada en su precisión de ajuste (por ejemplo, $R^2$).
-    \item \textbf{Actualización:} El gradiente de política utiliza estas recompensas para actualizar los pesos de la RNN, incrementando la probabilidad de generar expresiones de alta recompensa (alta precisión y dimensionalmente correctas) en futuras iteraciones.
+    \item \textbf{Generación:} La RNN (agente) muestrea un lote de expresiones candidatas, guiada por las restricciones sintácticas o físicas.
+    \item \textbf{Evaluación:} Se optimizan numéricamente las constantes libres de cada expresión y se calcula una recompensa (\textit{reward}) basada en la precisión del ajuste (e.g., NRMSE o $R^2$).
+    \item \textbf{Actualización:} Se ajustan los pesos de la RNN mediante un gradiente de política con estrategia \textit{risk-seeking} (búsqueda de riesgo)~\cite{4}.
 \end{enumerate}
 
-El resultado final del proceso es un conjunto de expresiones en la frontera de Pareto, que balancean la complejidad de la ecuación y la precisión del ajuste a los datos.
-
+Este enfoque privilegia el descubrimiento de casos extremos de alto rendimiento ("el mejor descubrimiento") por sobre el promedio, permitiendo que el modelo converja hacia una Frontera de Pareto de soluciones óptimas en términos de precisión y complejidad.
 
 \subsubsection{Aspectos de implementación y programación}
 
-Para la implementación se utilizó el paquete oficial \texttt{physo} (Physical Symbolic Optimization)\footnote{\url{https://github.com/WassimTenachi/PhySO}}, el cual está basado en la librería \texttt{PyTorch}. El trabajo se condujo en un notebook de Google Colab, donde se cargaron los datos experimentales del número de Nusselt y se ejecutó el proceso de aprendizaje por refuerzo para encontrar la ecuación gobernante. Los principales procesos realizados fueron:
+Para la implementación se utilizaron los paquetes oficiales \texttt{dsr} (Deep Symbolic Optimization)\footnote{\url{https://github.com/dso-org/deep-symbolic-optimization}} y \texttt{physo} (Physical Symbolic Optimization)\footnote{\url{https://github.com/WassimTenachi/PhySO}}, los cuales se basan en la librería \texttt{PyTorch}. El trabajo se condujo en jupyter notebooks donde se generaron las funciones de benchmark de nguyen y se cargaron los datos experimentales del número de Nusselt, luego se ejecutó el proceso de aprendizaje por refuerzo para ambos conjuntos de datos.\\
+
+\textbf{Configuración de Hiperparámetros:} Las configuraciones de ambos modelos funcionaban de forma diferente, por lo que se detallan por separado:
 
 \begin{itemize}
-    \item \textbf{Carga y preparación de datos:}
-    Se empleó la librería \texttt{pandas} para importar el archivo \texttt{NN\_data.csv}. De este, se extrajeron las variables de interés (Reynolds \texttt{Re}, Prandtl \texttt{Pr} y Nusselt \texttt{Nu\_D}). Se especificaron sus unidades físicas (adimensionales) y se procedió a separar los datos en conjuntos de entrenamiento y prueba.
-
-    \item \textbf{Definición de la biblioteca y configuración:}
-    Se definió la biblioteca de funciones (\texttt{my\_tokens}) que el agente podía utilizar. Esta incluyó operadores aritméticos (\texttt{add}, \texttt{mul}, \texttt{div}, \texttt{inv}, \texttt{n2}, \texttt{sqrt}), funciones (\texttt{exp}, \texttt{log}) y constantes libres (\texttt{c}). El entorno se configuró a través de un diccionario \texttt{config}, donde se ajustaron los parámetros del prior de unidades (análisis dimensional), la función de recompensa (\texttt{reward.SquashedNRMSE}) y los hiperparámetros del algoritmo de aprendizaje (\texttt{gamma}, \texttt{entropy\_weight}).
-
-    \item \textbf{Entrenamiento por Aprendizaje por Refuerzo:}
-    El proceso de búsqueda se inició con la función \texttt{physo.fit}, proporcionando los datos, unidades y la configuración. A diferencia de EQL, el entrenamiento no ocurre en fases, sino que \texttt{physo} aplica su algoritmo de gradiente de política para explorar el espacio de ecuaciones. Este proceso optimiza la recompensa (basada en NRMSE) hasta alcanzar un tiempo máximo de ejecución (\texttt{max\_time\_seconds}).
-
-    \item \textbf{Evaluación y visualización de resultados:}
-    Al finalizar la ejecución, se extrajeron las mejores expresiones desde la "Sala de la Fama" (\texttt{hall\_of\_fame\_PhysicalExpression}). Se tomó la mejor expresión candidata para obtener su fórmula simbólica (\texttt{best\_expression.formula}) y se evaluó su desempeño con las métricas RMSE y $R^2$ sobre los datos de prueba. Se utilizaron las herramientas del paquete (\texttt{physo.viz}) para graficar la frontera de Pareto (\texttt{plot\_HOF}) y la comparativa entre valores reales y predichos (\texttt{plot\_expression}).
+    \item \textbf{DSR:} Se utilizó una RNN con \texttt{task\_type:regression}, se utilizó el \texttt{function\_set:[\textquotedbl add\textquotedbl, \textquotedbl sub\textquotedbl, \textquotedbl mul\textquotedbl, \textquotedbl div\textquotedbl, \textquotedbl sin\textquotedbl, \textquotedbl cos\textquotedbl, \textquotedbl log\textquotedbl, \textquotedbl sqrt\textquotedbl]}. Luego para el entrenamiento como tal se buscó llegar a un número de muestras (\texttt{n\_samples}) de 2.000.000 con un batch size de 5000, además el epsilon se dejó en 0,05 como se recomendaba el repositorio, el learning rate se dejó en 0.001.
+    \item \textbf{$\Phi$-SO:} Para phy-so la configuración fue bastante más simple, se utilizó la configuración por defecto config0, hecha para tiempos de entrenamiento razonables, a esta se le configuraron 15 epocas de entrenamiento.
 \end{itemize}
 
-Todo el proceso se desarrolló en Google Colab, garantizando la reproducibilidad del experimento mediante la instalación de la librería \texttt{physo} y el uso del mismo conjunto de datos experimentales.
 
 
 \subsection{Growing Interpretable Neural Network (GINN-LP)}
@@ -339,15 +311,9 @@ Para los casos experimentales de Nusselt, se añadieron representaciones en func
 % Incluye tablas con métricas NRMSE y R² para Nguyen-1 a Nguyen-10.
 % Muestra ejemplos de ecuaciones recuperadas y sus gráficos.
 
-Los modelos considerados fueron evaluados utilizando el conjunto de funciones del benchmark de Nguyen, con el objetivo de analizar su capacidad para recuperar ecuaciones en distintos niveles de complejidad. Para cada modelo se obtuvieron las métricas de desempeño correspondientes, las cuales se presentan de manera individual en las tablas incluidas en el Anexo, junto con los gráficos asociados a cada función del benchmark. Estas visualizaciones permiten apreciar el ajuste obtenido por cada método y la consistencia de las expresiones recuperadas respecto de los datos sintéticos. En conjunto, los resultados permiten comparar el comportamiento global de las distintas aproximaciones de regresión simbólica, destacando sus diferencias en precisión, estabilidad y capacidad de generalización.
+Los modelos considerados fueron evaluados utilizando el conjunto de funciones del benchmark de Nguyen, con el objetivo de analizar su capacidad para recuperar ecuaciones en distintos niveles de complejidad. Para cada modelo se obtuvieron las métricas de desempeño correspondientes (NRMSE y $R^2$), las cuales se presentan de manera individual en la Tabla~\ref{tab:nguyen_metrics_6models}.\\
 
-Los modelos considerados fueron evaluados utilizando el conjunto de funciones del benchmark de Nguyen, con el objetivo de analizar su capacidad para recuperar ecuaciones en distintos niveles de complejidad. Para cada modelo se obtuvieron las métricas de desempeño correspondientes, las cuales se presentan de manera individual en las tablas incluidas en el Anexo, junto con los gráficos asociados a cada función del benchmark. De forma adicional, se aplicó la misma metodología al caso de baterías, evaluando el ajuste de los modelos sobre los datos termodinámicos y fluidodinámicos asociados, cuyos resultados también se encuentran detallados en el Anexo. En conjunto, estas evaluaciones permiten comparar el comportamiento global de las distintas aproximaciones de regresión simbólica, destacando sus diferencias en precisión, estabilidad y capacidad de generalización en ambos escenarios de estudio.
-
-
-
-TIRARÍA TODO ESTO PARA EL ANEXO.
-
- La Tabla~\ref{tab:nguyen_metrics_6models} presenta los valores de error cuadrático medio normalizado (NRMSE) y coeficiente de determinación ($R^2$) obtenidos en el conjunto de prueba para ambos modelos.
+Los gráficos asociados a cada función del benchmark evaluada se presentan en el anexo. Estas visualizaciones permiten apreciar el ajuste obtenido por cada método y la consistencia de las expresiones recuperadas respecto a la utilizada para generar los datos sintéticos. En conjunto, los resultados permiten comparar el comportamiento global de las distintas aproximaciones de regresión simbólica, destacando sus diferencias en precisión, estabilidad y capacidad de generalización.\\
 
 \begin{table}[H]
     \centering
@@ -399,26 +365,27 @@ Visualmente, el ajuste (Figura~\ref{fig:ref_nusselt_results}) muestra un coefici
     \label{fig:ref_nusselt_results}
 \end{figure}
 
-\subsubsection{Resultados Obtenidos (Implementación EQL)}
+\subsubsection{Resultados Obtenidos}
 
-De forma paralela, se aplicó el modelo \textbf{\textit{Equation Learner} (EQL)} a los mismos datos. Este enfoque utiliza una red neuronal simbólica para \textit{descubrir} la estructura de la ecuación desde cero, en lugar de solo optimizar coeficientes.
+De forma paralela, se entrenaron los 6 modelos con los mismos datos dados para el caso de baterías de 25 celdas. Se obtuvieron las siguientes métricas de desempeño, presentadas en la Tabla~\ref{tab:battery_metrics}.
 
-Los resultados de la mejor expresión simbólica encontrada por la implementación de EQL se muestran en la Figura~\ref{fig:eql_nusselt_results}.
-
-\begin{itemize}
-    \item El gráfico de paridad (derecha) muestra un ajuste preciso para los datos de entrenamiento (círculos azules) y una dispersión controlada para los datos de prueba (cruces naranjas), sugiriendo una buena capacidad de generalización.
-    \item La correlación $\text{Nu}$ vs. $\text{Re}$ (izquierda) también demuestra que la ecuación descubierta por EQL captura exitosamente la tendencia física de los datos de CFD (círculos negros).
-\end{itemize}
-
-El desempeño visual del EQL es robusto y comparable al \textit{benchmark} de referencia, validando este enfoque como una alternativa capaz de descubrir la forma funcional de la correlación directamente desde los datos.
-
-\begin{figure}[H]
+\begin{table}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{NUvsREYNOLDS25.png}
-    \caption{Resultados obtenidos con la implementación propia de EQL sobre los datos de baterías. Izquierda: Correlación log-log $\text{Nu}$ vs. $\text{Re}$. Derecha: Gráfico de paridad (Train/Test).}
-    \label{fig:eql_nusselt_results}
-\end{figure}
-
+    \caption{Métricas de desempeño de los modelos sobre el dataset de Baterías (Li-ion).}
+    \label{tab:battery_metrics}
+    \resizebox{\textwidth}{!}{% Ajusta la tabla al ancho de la página
+    \begin{tabular}{lcccccccccccc}
+        \toprule
+        \multirow{2}{*}{\textbf{Caso / Batería}} & \multicolumn{2}{c}{\textbf{EQL}} & \multicolumn{2}{c}{\textbf{EQL+}} & \multicolumn{2}{c}{\textbf{Phy-SO}} & \multicolumn{2}{c}{\textbf{Ginn-LP}} & \multicolumn{2}{c}{\textbf{DSR}} & \multicolumn{2}{c}{\textbf{Operon}} \\ 
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7} \cmidrule(lr){8-9} \cmidrule(lr){10-11} \cmidrule(lr){12-13}
+        & \textbf{NRMSE} & \textbf{$R^2$} & \textbf{NRMSE} & \textbf{$R^2$} & \textbf{NRMSE} & \textbf{$R^2$} & \textbf{NRMSE} & \textbf{$R^2$} & \textbf{NRMSE} & \textbf{$R^2$} & \textbf{NRMSE} & \textbf{$R^2$} \\ 
+        \midrule
+        % Reemplaza 'DATA' con tus valores numéricos
+        Batería 25 celdas & 0.022 & 0.984 & 0.018 & 0.989 & - & 0.982 & - & - & 0.026 & 0.977 & - & 0.983 \\
+        \hline
+    \end{tabular}
+    }
+\end{table}
 
 
 \newpage
@@ -434,15 +401,24 @@ El desempeño visual del EQL es robusto y comparable al \textit{benchmark} de re
 
 \newpage
 % ============================================================
-\section{Plan de Trabajo Restante}
-% Lista de tareas pendientes y cronograma estimado.
-% Ejemplo:
-\begin{itemize}[label=--]
-    \item Extender EQL a variantes con divisiones (EQL÷).
-    \item Ajustar correlación Nusselt con inclusión de \(Pr\).
-    \item Comparar con otro método simbólico (DSR o GINN-LP).
-    \item Preparar informe final y análisis comparativo.
-\end{itemize}
+\section{Trabajo Futuro}
+
+A partir del análisis comparativo realizado sobre los modelos de Regresión Simbólica basados en Redes Neuronales (EQL, DSR, GINN-LP) y Computación Evolutiva (Operon), se identifican tres líneas principales de investigación para robustecer la generalización y aplicabilidad industrial de estos métodos.
+
+\subsection{Análisis Multiobjetivo mediante Frentes de Pareto}
+El presente estudio se centró en métricas de precisión ($R^2$, NRMSE). Sin embargo, en el contexto del descubrimiento de leyes físicas, la interpretabilidad es tan crítica como la exactitud. Un modelo que reduce el error en un $0.1\%$ a costa de aumentar la complejidad de la expresión en un orden de magnitud suele ser descartado en aplicaciones reales (Navaja de Ockham).
+
+Como trabajo futuro, se propone la implementación de una evaluación basada en el \textbf{Frente de Pareto} de Complejidad-Exactitud. Esto implica cuantificar la complejidad estructural de las ecuaciones recuperadas (ej. longitud del árbol sintáctico o anidamiento de funciones no lineales) y graficarla frente al error de ajuste. Esto permitiría identificar qué algoritmos dominan el frente de Pareto, ofreciendo el mejor compromiso entre simplicidad y precisión, en lugar de evaluar únicamente el error numérico.
+
+\subsection{Comparación con Arquitecturas de Inferencia Directa (Transformers)}
+La selección de modelos actual abarcó estrategias de búsqueda iterativa: optimización continua (EQL), aprendizaje por refuerzo secuencial (DSR) y evolución (Operon). No obstante, el estado del arte reciente ha introducido paradigmas basados en modelos de lenguaje pre-entrenados, conocidos como \textit{Symbolic Transformers}.
+
+Se propone extender el benchmark incluyendo modelos como \textbf{NeSymReS} (Neural Symbolic Regression that Scales) \cite{biglari2021} o \textbf{SymFormer}. A diferencia de los métodos evaluados que inician la búsqueda desde cero (\textit{tabula rasa}) para cada conjunto de datos, estos modelos utilizan arquitecturas Transformer pre-entrenadas con millones de ecuaciones sintéticas para realizar una inferencia \textit{Zero-Shot} o \textit{One-Shot}. Comparar la precisión asintótica de los métodos iterativos actuales frente a la velocidad de inferencia instantánea de los Transformers definiría la viabilidad de estos últimos para aplicaciones de tiempo real.
+
+\subsection{Optimización Bayesiana de Hiperparámetros (AutoML)}
+Una limitación metodológica de este proyecto fue el uso de una configuración fija de hiperparámetros para todos los problemas, lo cual puede subestimar el potencial máximo de algoritmos sensibles a la inicialización como EQL o GINN-LP.
+
+Para mitigar esto, se propone la integración de marcos de optimización automática de hiperparámetros (HPO) como \textbf{Optuna} o \textbf{Hyperopt}. Mediante el uso de estimadores bayesianos (como TPE - \textit{Tree-structured Parzen Estimator}), se podría automatizar la búsqueda de la configuración óptima (tasa de aprendizaje, coeficientes de regularización, tamaño de población) para cada dataset específico. Esto cambiaría el enfoque de comparar el desempeño "promedio" de los modelos a comparar su \textit{Peak Performance} o capacidad máxima teórica, eliminando el sesgo introducido por la configuración manual humana.
 
 
 

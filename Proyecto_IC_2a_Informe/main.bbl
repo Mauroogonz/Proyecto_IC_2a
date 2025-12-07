@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{9}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -35,6 +35,11 @@ Georg Martius and Christoph~H. Lampert.
 Brenden~K. Petersen, Mikel Landajuela, T.~Nathan Mundhenk, Claudio~P. Santiago, Soo~K. Kim, and Joanne~T. Kim.
 \newblock Deep symbolic regression: Recovering mathematical expressions from data via risk-seeking policy gradients, 2021.
 \newblock URL \url{https://arxiv.org/abs/1912.04871}.
+
+\bibitem[Ranasinghe et~al.(2024)Ranasinghe, Senanayake, Seneviratne, Premaratne, and Halgamuge]{4}
+Nisal Ranasinghe, Damith Senanayake, Sachith Seneviratne, Malin Premaratne, and Saman Halgamuge.
+\newblock Ginn-lp: A growing interpretable neural network for discovering multivariate laurent polynomial equations, 2024.
+\newblock URL \url{https://arxiv.org/abs/2312.10913}.
 
 \bibitem[Sahoo et~al.(2018)Sahoo, Lampert, and Martius]{2}
 Subham~S. Sahoo, Christoph~H. Lampert, and Georg Martius.

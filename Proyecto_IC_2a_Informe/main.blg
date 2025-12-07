@@ -4,45 +4,46 @@ The top-level auxiliary file: main.aux
 The style file: plainnat.bst
 Database file #1: library.bib
 Warning--I didn't find a database entry for ""
-You've used 8 entries,
+Warning--I didn't find a database entry for "biglari2021"
+You've used 9 entries,
             2773 wiz_defined-function locations,
-            649 strings with 6889 characters,
-and the built_in function-call counts, 3625 in all, are:
-= -- 328
-> -- 235
+            654 strings with 7144 characters,
+and the built_in function-call counts, 4137 in all, are:
+= -- 368
+> -- 283
 < -- 3
-+ -- 80
-- -- 72
-* -- 309
-:= -- 594
-add.period$ -- 36
-call.type$ -- 8
-change.case$ -- 49
-chr.to.int$ -- 8
-cite$ -- 16
-duplicate$ -- 140
-empty$ -- 262
-format.name$ -- 82
-if$ -- 736
++ -- 96
+- -- 87
+* -- 355
+:= -- 675
+add.period$ -- 39
+call.type$ -- 9
+change.case$ -- 57
+chr.to.int$ -- 9
+cite$ -- 18
+duplicate$ -- 156
+empty$ -- 295
+format.name$ -- 98
+if$ -- 840
 int.to.chr$ -- 1
 int.to.str$ -- 1
 missing$ -- 3
-newline$ -- 60
-num.names$ -- 32
-pop$ -- 83
+newline$ -- 65
+num.names$ -- 36
+pop$ -- 102
 preamble$ -- 1
-purify$ -- 39
+purify$ -- 46
 quote$ -- 0
-skip$ -- 120
+skip$ -- 138
 stack$ -- 0
-substring$ -- 71
-swap$ -- 8
+substring$ -- 73
+swap$ -- 9
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 88
+type$ -- 99
 warning$ -- 0
-while$ -- 28
+while$ -- 31
 width$ -- 0
-write$ -- 132
-(There was 1 warning)
+write$ -- 144
+(There were 2 warnings)

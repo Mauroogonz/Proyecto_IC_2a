@@ -480,14 +480,10 @@ INPUT ./main.toc
 INPUT main.toc
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
 OUTPUT main.toc
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr17.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 INPUT ./main.lof
 INPUT ./main.lof
 INPUT main.lof
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 OUTPUT main.lof
 INPUT ./main.lot
 INPUT ./main.lot
@@ -498,6 +494,7 @@ INPUT ./Estructura.tex
 INPUT ./Estructura.tex
 INPUT ./Estructura.tex
 INPUT Estructura.tex
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri12.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx12.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx8.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx6.tfm
@@ -549,12 +546,7 @@ INPUT ./Captura de pantalla 2025-10-20 191357.png
 INPUT ./Captura de pantalla 2025-10-20 191357.png
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
-INPUT ./img/EQL.png
-INPUT ./img/EQL.png
-INPUT ./img/EQL.png
-INPUT ./img/EQL.png
-INPUT ./img/EQL.png
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmri10.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmr7.tfm
@@ -612,57 +604,15 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/stmaryrd/stmary7.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ts1-lmr12.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ts1-lmr7.tfm
-INPUT ./PhySO.png
-INPUT ./PhySO.png
-INPUT ./PhySO.png
-INPUT ./PhySO.png
-INPUT ./PhySO.png
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmr10.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmr8.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmr5.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmi10.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmi8.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmmi5.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmsy10.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmsy8.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/lmsy5.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs10.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/rsfs/rsfs5.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/wasy/wasy10.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/wasy/wasy8.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/wasy/wasy5.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/stmaryrd/stmary10.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/stmaryrd/stmary8.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/stmaryrd/stmary5.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ts1-lmr10.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ts1-lmr8.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ts1-lmr5.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx8.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx6.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx5.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm
 INPUT ./Captura de pantalla 2025-10-20 184649.png
 INPUT ./Captura de pantalla 2025-10-20 184649.png
 INPUT ./Captura de pantalla 2025-10-20 184649.png
 INPUT ./Captura de pantalla 2025-10-20 184649.png
 INPUT ./Captura de pantalla 2025-10-20 184649.png
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbxi10.tfm
-INPUT ./NUvsREYNOLDS25.png
-INPUT ./NUvsREYNOLDS25.png
-INPUT ./NUvsREYNOLDS25.png
-INPUT ./NUvsREYNOLDS25.png
-INPUT ./NUvsREYNOLDS25.png
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx10.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx8.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/rm-lmbx5.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl
@@ -672,7 +622,6 @@ INPUT c:/texlive/2025/texmf-dist/tex/generic/stringenc/se-utf8.def
 INPUT main.aux
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb
-INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb
@@ -682,7 +631,6 @@ INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb
-INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb

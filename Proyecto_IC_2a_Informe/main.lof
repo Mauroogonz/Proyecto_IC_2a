@@ -1,6 +1,3 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {figure}{\numberline {1}{\ignorespaces Tabla de funciones para regresión simbólica \cite {3}}}{3}{figure.caption.2}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Arquitectura general del modelo \textit {Equation Learner} (EQL). El esquema ilustra el flujo de información a través de capas simbólicas. En la variante EQL-Div, las unidades de multiplicación se complementan con unidades de división, permitiendo la formación de denominadores.}}{6}{figure.caption.3}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Esquema de generación de expresiones en Φ-SO. La RNN recibe información contextual (incluyendo unidades) y genera una distribución de probabilidad. Un prior de unidades físicas filtra esta distribución antes de muestrear el siguiente token. Adaptado de \cite {2}.}}{8}{figure.caption.4}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Resultados de referencia reportados en De la Sotta [2]. Izquierda: Correlación log-log. Derecha: Gráfico de paridad.}}{15}{figure.caption.7}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Resultados obtenidos con la implementación propia de EQL sobre los datos de baterías. Izquierda: Correlación log-log $\text {Nu}$ vs. $\text {Re}$. Derecha: Gráfico de paridad (Train/Test).}}{16}{figure.caption.8}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Resultados de referencia reportados en De la Sotta [2]. Izquierda: Correlación log-log. Derecha: Gráfico de paridad.}}{14}{figure.caption.5}%
