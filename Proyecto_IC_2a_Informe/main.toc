@@ -4,23 +4,30 @@
 \contentsline {section}{\numberline {3}Descripción del Problema y Base de Datos}{3}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Datos sintéticos: Benchmark Nguyen}{3}{subsection.3.1}%
 \contentsline {subsection}{\numberline {3.2}Datos reales: Baterías y transferencia térmica}{4}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Metodología y Arquitectura}{5}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Equation Learner (EQL)}{5}{subsection.4.1}%
+\contentsline {section}{\numberline {4}Metodología y Arquitecturas}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Equation Learner (EQL) y Equation Learner with Division (EQL-Div)}{5}{subsection.4.1}%
 \contentsline {subsubsection}{\numberline {4.1.1}Arquitectura del modelo}{5}{subsubsection.4.1.1}%
 \contentsline {subsubsection}{\numberline {4.1.2}Fases de entrenamiento y regularización}{6}{subsubsection.4.1.2}%
-\contentsline {subsubsection}{\numberline {4.1.3}Evaluación y visualización de resultados}{6}{subsubsection.4.1.3}%
-\contentsline {subsubsection}{\numberline {4.1.4}Aspectos de implementación y programación}{7}{subsubsection.4.1.4}%
-\contentsline {subsection}{\numberline {4.2}Physical Symbolic Optimization (Φ-SO)}{8}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Arquitectura y generación de expresiones}{8}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Entrenamiento por Aprendizaje por Refuerzo}{9}{subsubsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4.2.3}Aspectos de implementación y programación}{10}{subsubsection.4.2.3}%
-\contentsline {subsection}{\numberline {4.3}Configuración experimental}{11}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Resultados Preliminares}{12}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Funciones Nguyen}{12}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Caso de Baterías}{16}{subsection.5.2}%
-\contentsline {subsubsection}{\numberline {5.2.1}Resultados de Referencia (Tesis [2])}{17}{subsubsection.5.2.1}%
-\contentsline {subsubsection}{\numberline {5.2.2}Resultados Obtenidos (Implementación EQL)}{17}{subsubsection.5.2.2}%
-\contentsline {section}{\numberline {6}Discusión}{19}{section.6}%
-\contentsline {section}{\numberline {7}Plan de Trabajo Restante}{20}{section.7}%
-\contentsline {section}{\numberline {8}Conclusiones Preliminares}{21}{section.8}%
-\contentsline {section}{Bibliograf\'{\i }a}{22}{section.8}%
+\contentsline {subsubsection}{\numberline {4.1.3}Aspectos de implementación y programación}{7}{subsubsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.2}Physical Symbolic Optimization (Φ-SO)}{7}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Arquitectura y generación de expresiones}{7}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Entrenamiento por Aprendizaje por Refuerzo}{8}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Aspectos de implementación y programación}{9}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Growing Interpretable Neural Network (GINN-LP)}{10}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.3.1}Arquitectura y Algoritmo de Crecimiento}{10}{subsubsection.4.3.1}%
+\contentsline {subsubsection}{\numberline {4.3.2}Aspectos de implementación y configuración}{10}{subsubsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.4}Operon (C++ Symbolic Regression Framework)}{11}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}Arquitectura y Codificación Lineal}{11}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}Algoritmo Evolutivo y Selección de Pareto}{12}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.3}Aspectos de implementación y configuración}{12}{subsubsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.5}Configuración experimental}{12}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Métricas de evaluación}{13}{subsection.4.6}%
+\contentsline {section}{\numberline {5}Resultados}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Funciones Nguyen}{14}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Caso de Baterías}{14}{subsection.5.2}%
+\contentsline {subsubsection}{\numberline {5.2.1}Resultados de Referencia (Tesis [2])}{15}{subsubsection.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.2.2}Resultados Obtenidos (Implementación EQL)}{15}{subsubsection.5.2.2}%
+\contentsline {section}{\numberline {6}Discusión}{17}{section.6}%
+\contentsline {section}{\numberline {7}Plan de Trabajo Restante}{18}{section.7}%
+\contentsline {section}{\numberline {8}Conclusiones Preliminares}{19}{section.8}%
+\contentsline {section}{Bibliograf\'{\i }a}{20}{section.8}%

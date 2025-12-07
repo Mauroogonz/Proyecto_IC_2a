@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.4)  5 DEC 2025 14:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.12.4)  6 DEC 2025 22:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2062,8 +2062,12 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'spanish'.
-
-No file main.aux.
+ (./main.aux
+LaTeX Info: Redefining \. on input line 16.
+LaTeX Info: Redefining \% on input line 16.
+Package babel Info: 'spanish' activates 'spanish' shorthands.
+(babel)             Reported on input line 16.
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
@@ -2084,7 +2088,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
 LaTeX Font Info:    ... okay on input line 70.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 70.
 LaTeX Font Info:    ... okay on input line 70.
-(c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count455
 \scratchdimen=\dimen329
@@ -2105,8 +2109,6 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 LaTeX Info: Redefining \. on input line 70.
 LaTeX Info: Redefining \% on input line 70.
-Package babel Info: 'spanish' activates 'spanish' shorthands.
-(babel)             Reported on input line 70.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: floatrow package is loaded.
@@ -2260,8 +2262,10 @@ Package pdftex.def Info: ./img//departamentos/die.pdf  used on input line 79.
 
 
 
- <./img//departamentos/die.pdf>]
-No file main.toc.
+ <./img//departamentos/die.pdf>] (./main.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
 \tf@toc=\write3
 \openout3 = `main.toc'.
 
@@ -2269,13 +2273,29 @@ No file main.toc.
 pdfTeX warning (ext4): destination with the same identifier (name{page.Cover}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
+l.79 \templateIndex
+                    [2
+
+{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] (./main.lof
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
+\tf@lof=\write4
+\openout4 = `main.lof'.
+
+ (./main.lot
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+)
+\tf@lot=\write5
+\openout5 = `main.lot'.
+
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.Cover}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
 l.82 \templateFinalcfg
-                       [2
-
-] (./Estructura.tex
-
-Package natbib Warning: Citation `1' on page 1 undefined on input line 10.
-
+                       [3] (./Estructura.tex
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <8> not available
 (Font)              Font shape `U/wasy/m/n' tried instead on input line 10.
@@ -2288,27 +2308,6 @@ LaTeX Font Warning: Font shape `U/wasy/b/n' in size <6> not available
 LaTeX Font Warning: Font shape `U/stmry/b/n' undefined
 (Font)              using `U/stmry/m/n' instead on input line 10.
 
-
-Package natbib Warning: Citation `2' on page 1 undefined on input line 10.
-
-
-Package natbib Warning: Citation `5' on page 1 undefined on input line 12.
-
-
-Package natbib Warning: Citation `1' on page 1 undefined on input line 14.
-
-
-Package natbib Warning: Citation `5' on page 1 undefined on input line 14.
-
-
-Package natbib Warning: Citation `7' on page 1 undefined on input line 14.
-
-
-Package natbib Warning: Citation `8' on page 1 undefined on input line 14.
-
-
-Package natbib Warning: Citation `9' on page 1 undefined on input line 14.
-
 [1
 
 {c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
@@ -2319,231 +2318,63 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5.6> on input line 32.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <4.00003> on input line 32.
- [2{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}]
-
-Package natbib Warning: Citation `3' on page 3 undefined on input line 52.
-
-
-Package natbib Warning: Citation `9' on page 3 undefined on input line 52.
-
-
-Package natbib Warning: Citation `10' on page 3 undefined on input line 52.
-
-<Captura de pantalla 2025-10-20 191357.png, id=44, 295.1025pt x 214.55156pt>
+ [2{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
+<Captura de pantalla 2025-10-20 191357.png, id=154, 295.1025pt x 214.55156pt>
 File: Captura de pantalla 2025-10-20 191357.png Graphic file (type png)
 <use Captura de pantalla 2025-10-20 191357.png>
 Package pdftex.def Info: Captura de pantalla 2025-10-20 191357.png  used on input line 59.
 (pdftex.def)             Requested size: 281.8561pt x 204.92607pt.
-
-Package natbib Warning: Citation `3' on page 3 undefined on input line 60.
-
-
-Package natbib Warning: Citation `3' on page 3 undefined on input line 60.
-
-[3 <./Captura de pantalla 2025-10-20 191357.png>]
-
-Package natbib Warning: Citation `3' on page 4 undefined on input line 75.
-
-[4]
-
-Package natbib Warning: Citation `1' on page 5 undefined on input line 91.
-
-<img/EQL.png, id=63, 922.19531pt x 354.57469pt>
+ [3 <./Captura de pantalla 2025-10-20 191357.png>] [4] [5{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
+<img/EQL.png, id=188, 922.19531pt x 354.57469pt>
 File: img/EQL.png Graphic file (type png)
 <use img/EQL.png>
-Package pdftex.def Info: img/EQL.png  used on input line 117.
+Package pdftex.def Info: img/EQL.png  used on input line 121.
 (pdftex.def)             Requested size: 399.29494pt x 153.52457pt.
-LaTeX Font Info:    Calculating math sizes for size <10.95007> on input line 118.
+LaTeX Font Info:    Calculating math sizes for size <10.00012> on input line 144.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95007> on input line 118.
+(Font)              <10.00012> on input line 144.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.66501> on input line 118.
+(Font)              <7.00005> on input line 144.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.47504> on input line 118.
-
-Package natbib Warning: Citation `1' on page 5 undefined on input line 118.
-
-
-Package natbib Warning: Citation `1' on page 5 undefined on input line 118.
-
-[5{c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}] [6 <./img/EQL.png>]
-LaTeX Font Info:    Calculating math sizes for size <10.00012> on input line 160.
+(Font)              <5.00006> on input line 144.
+ [6 <./img/EQL.png>]
+LaTeX Font Info:    Calculating math sizes for size <14.39996> on input line 162.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.00012> on input line 160.
+(Font)              <14.39996> on input line 162.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.00005> on input line 160.
+(Font)              <10.07993> on input line 162.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5.00006> on input line 160.
+(Font)              <7.19998> on input line 162.
  [7]
-LaTeX Font Info:    Calculating math sizes for size <14.39996> on input line 189.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.39996> on input line 189.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.07993> on input line 189.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7.19998> on input line 189.
-
-
-Package natbib Warning: Citation `2' on page 8 undefined on input line 192.
-
-[8]
-<PhySO.png, id=113, 657.2053pt x 336.50719pt>
+<PhySO.png, id=212, 657.2053pt x 336.50719pt>
 File: PhySO.png Graphic file (type png)
 <use PhySO.png>
-Package pdftex.def Info: PhySO.png  used on input line 204.
+Package pdftex.def Info: PhySO.png  used on input line 177.
 (pdftex.def)             Requested size: 422.77698pt x 216.47807pt.
-
-
-Package natbib Warning: Citation `2' on page 9 undefined on input line 205.
-
-
-Package natbib Warning: Citation `2' on page 9 undefined on input line 205.
-
-[9 <./PhySO.png>] [10] [11]
-
-LaTeX Warning: Reference `tab:nguyen_metrics' on page 12 undefined on input line 261.
-
-<img/N1.png, id=142, 570.933pt x 281.853pt>
-File: img/N1.png Graphic file (type png)
-<use img/N1.png>
-Package pdftex.def Info: img/N1.png  used on input line 291.
-(pdftex.def)             Requested size: 225.48058pt x 111.31136pt.
-<nguyen1 physo.png, id=143, 557.9244pt x 268.8444pt>
-File: nguyen1 physo.png Graphic file (type png)
-<use nguyen1 physo.png>
-Package pdftex.def Info: nguyen1 physo.png  used on input line 298.
-(pdftex.def)             Requested size: 225.48058pt x 108.64755pt.
-<img/N2.png, id=144, 570.933pt x 281.853pt>
-File: img/N2.png Graphic file (type png)
-<use img/N2.png>
-Package pdftex.def Info: img/N2.png  used on input line 311.
-(pdftex.def)             Requested size: 225.48058pt x 111.31136pt.
-<nguyen2 physo.png, id=145, 557.9244pt x 268.8444pt>
-File: nguyen2 physo.png Graphic file (type png)
-<use nguyen2 physo.png>
-Package pdftex.def Info: nguyen2 physo.png  used on input line 318.
-(pdftex.def)             Requested size: 225.48058pt x 108.64755pt.
-[12 <./img/N1.png> <./nguyen1 physo.png>]
-<img/N3.png, id=158, 570.933pt x 281.853pt>
-File: img/N3.png Graphic file (type png)
-<use img/N3.png>
-Package pdftex.def Info: img/N3.png  used on input line 330.
-(pdftex.def)             Requested size: 225.48058pt x 111.31136pt.
-<nguyen 3 physo.png, id=159, 557.9244pt x 268.8444pt>
-File: nguyen 3 physo.png Graphic file (type png)
-<use nguyen 3 physo.png>
-Package pdftex.def Info: nguyen 3 physo.png  used on input line 337.
-(pdftex.def)             Requested size: 225.48058pt x 108.64755pt.
-<img/N4.png, id=160, 570.933pt x 281.853pt>
-File: img/N4.png Graphic file (type png)
-<use img/N4.png>
-Package pdftex.def Info: img/N4.png  used on input line 350.
-(pdftex.def)             Requested size: 225.48058pt x 111.31136pt.
-<nguyen 4 physo.png, id=161, 557.9244pt x 268.8444pt>
-File: nguyen 4 physo.png Graphic file (type png)
-<use nguyen 4 physo.png>
-Package pdftex.def Info: nguyen 4 physo.png  used on input line 357.
-(pdftex.def)             Requested size: 225.48058pt x 108.64755pt.
-<img/N5.png, id=162, 570.933pt x 281.853pt>
-File: img/N5.png Graphic file (type png)
-<use img/N5.png>
-Package pdftex.def Info: img/N5.png  used on input line 370.
-(pdftex.def)             Requested size: 225.48058pt x 111.31136pt.
-<nguyen 5 physo.png, id=163, 557.9244pt x 268.8444pt>
-File: nguyen 5 physo.png Graphic file (type png)
-<use nguyen 5 physo.png>
-Package pdftex.def Info: nguyen 5 physo.png  used on input line 377.
-(pdftex.def)             Requested size: 225.48058pt x 108.64755pt.
- [13 <./img/N2.png> <./nguyen2 physo.png> <./img/N3.png> <./nguyen 3 physo.png> <./img/N4.png> <./nguyen 4 physo.png>]
-<img/N6.png, id=178, 570.933pt x 281.853pt>
-File: img/N6.png Graphic file (type png)
-<use img/N6.png>
-Package pdftex.def Info: img/N6.png  used on input line 390.
-(pdftex.def)             Requested size: 225.48058pt x 111.31136pt.
-<nguyen 6 physo.png, id=179, 557.9244pt x 268.8444pt>
-File: nguyen 6 physo.png Graphic file (type png)
-<use nguyen 6 physo.png>
-Package pdftex.def Info: nguyen 6 physo.png  used on input line 397.
-(pdftex.def)             Requested size: 225.48058pt x 108.64755pt.
-<img/N9.png, id=180, 708.246pt x 281.853pt>
-File: img/N9.png Graphic file (type png)
-<use img/N9.png>
-Package pdftex.def Info: img/N9.png  used on input line 410.
-(pdftex.def)             Requested size: 225.48058pt x 89.73032pt.
-<nguyen91 physo.png, id=181, 483.4863pt x 413.3844pt>
-File: nguyen91 physo.png Graphic file (type png)
-<use nguyen91 physo.png>
-Package pdftex.def Info: nguyen91 physo.png  used on input line 417.
-(pdftex.def)             Requested size: 225.48058pt x 192.78314pt.
-<nguyen 92 physo.png, id=182, 483.4863pt x 413.3844pt>
-File: nguyen 92 physo.png Graphic file (type png)
-<use nguyen 92 physo.png>
-Package pdftex.def Info: nguyen 92 physo.png  used on input line 423.
-(pdftex.def)             Requested size: 225.48058pt x 192.78314pt.
- [14 <./img/N5.png> <./nguyen 5 physo.png> <./img/N6.png> <./nguyen 6 physo.png>]
-<img/N10.png, id=194, 708.246pt x 281.853pt>
-File: img/N10.png Graphic file (type png)
-<use img/N10.png>
-Package pdftex.def Info: img/N10.png  used on input line 436.
-(pdftex.def)             Requested size: 225.48058pt x 89.73032pt.
-<nguyen 11physo.png, id=195, 484.9317pt x 413.3844pt>
-File: nguyen 11physo.png Graphic file (type png)
-<use nguyen 11physo.png>
-Package pdftex.def Info: nguyen 11physo.png  used on input line 443.
-(pdftex.def)             Requested size: 225.48058pt x 192.21544pt.
-<nguyen12 physo.png, id=196, 484.9317pt x 413.3844pt>
-File: nguyen12 physo.png Graphic file (type png)
-<use nguyen12 physo.png>
-Package pdftex.def Info: nguyen12 physo.png  used on input line 449.
-(pdftex.def)             Requested size: 225.48058pt x 192.21544pt.
- [15 <./img/N9.png> <./nguyen91 physo.png> <./nguyen 92 physo.png>] [16 <./img/N10.png> <./nguyen 11physo.png> <./nguyen12 physo.png>]
-
-LaTeX Warning: Reference `fig:ref_nusselt_results' on page 17 undefined on input line 474.
-
-<Captura de pantalla 2025-10-20 184649.png, id=217, 584.1825pt x 177.66376pt>
+LaTeX Font Info:    Calculating math sizes for size <10.95007> on input line 178.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95007> on input line 178.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7.66501> on input line 178.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5.47504> on input line 178.
+ [8 <./PhySO.png>] [9] [10] [11] [12] [13] [14]
+<Captura de pantalla 2025-10-20 184649.png, id=273, 584.1825pt x 177.66376pt>
 File: Captura de pantalla 2025-10-20 184649.png Graphic file (type png)
 <use Captura de pantalla 2025-10-20 184649.png>
-Package pdftex.def Info: Captura de pantalla 2025-10-20 184649.png  used on input line 478.
+Package pdftex.def Info: Captura de pantalla 2025-10-20 184649.png  used on input line 397.
 (pdftex.def)             Requested size: 469.75539pt x 142.86856pt.
-
-LaTeX Warning: Reference `fig:eql_nusselt_results' on page 17 undefined on input line 487.
-
-<NUvsREYNOLDS25.png, id=218, 570.933pt x 354.123pt>
+ [15 <./Captura de pantalla 2025-10-20 184649.png>]
+<NUvsREYNOLDS25.png, id=282, 570.933pt x 354.123pt>
 File: NUvsREYNOLDS25.png Graphic file (type png)
 <use NUvsREYNOLDS25.png>
-Package pdftex.def Info: NUvsREYNOLDS25.png  used on input line 498.
+Package pdftex.def Info: NUvsREYNOLDS25.png  used on input line 417.
 (pdftex.def)             Requested size: 469.75539pt x 291.37695pt.
-[17 <./Captura de pantalla 2025-10-20 184649.png>] [18 <./NUvsREYNOLDS25.png>] [19] [20]) [21] (./main.bbl)
-
-Package natbib Warning: There were undefined citations.
-
-
-Package totalcount Warning: Total counter(s) have changed.
-(totalcount)                Rerun to get them right.
-
-
-c:/Users/Benjamin/Universidad/Inteligencia/Proyecto_IC_2a/Proyecto_IC_2a_Informe/main.tex:91: LaTeX Error: \begin{itemize} on input line 31 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.91 \end{document}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-(c:/texlive/2025/texmf-dist/tex/generic/stringenc/se-utf8.def
+ [16 <./NUvsREYNOLDS25.png>] [17] [18]) [19] (./main.bbl) (c:/texlive/2025/texmf-dist/tex/generic/stringenc/se-utf8.def
 File: se-utf8.def 2019/11/29 v1.12 stringenc: UTF-8
-) [22] (./main.aux
+) [20] (./main.aux
 LaTeX Info: Redefining \. on input line 16.
 LaTeX Info: Redefining \% on input line 16.
-
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
 )
  ***********
 LaTeX2e <2025-11-01>
@@ -2553,30 +2384,20 @@ L3 programming layer <2025-11-14>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- )
-(\end occurred inside a group at level 1)
-
-### semi simple group (level 1) entered at line 31 (\begingroup)
-### bottom level 
+ ) 
 Here is how much of TeX's memory you used:
- 33807 strings out of 467538
- 562850 string characters out of 5423719
- 1281061 words of memory out of 5000000
- 61989 multiletter control sequences out of 15000+600000
- 782030 words of font info for 213 fonts, out of 8000000 for 9000
+ 33671 strings out of 467538
+ 559502 string characters out of 5423719
+ 1288061 words of memory out of 5000000
+ 61837 multiletter control sequences out of 15000+600000
+ 802672 words of font info for 220 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 113i,16n,110p,17452b,2657s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmvtt10.pfb>
-Output written on main.pdf (24 pages, 1210726 bytes).
+ 113i,16n,110p,17452b,2502s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmvtk10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/lm/lmvtt10.pfb>
+Output written on main.pdf (23 pages, 713750 bytes).
 PDF statistics:
- 463 PDF objects out of 1000 (max. 8388607)
- 345 compressed objects within 4 object streams
- 83 named destinations out of 1000 (max. 500000)
- 339 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 531 PDF objects out of 1000 (max. 8388607)
+ 446 compressed objects within 5 object streams
+ 87 named destinations out of 1000 (max. 500000)
+ 305 words of extra memory for PDF output out of 10000 (max. 10000000)
 
