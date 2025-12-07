@@ -33,3 +33,4 @@
 \contentsline {subsection}{\numberline {7.3}Optimización Bayesiana de Hiperparámetros (AutoML)}{16}{subsection.7.3}%
 \contentsline {section}{\numberline {8}Conclusiones Preliminares}{18}{section.8}%
 \contentsline {section}{Bibliograf\'{\i }a}{19}{section.8}%
+\contentsline {section}{\numberline {1}Resultados Visuales: Benchmarks Nguyen}{20}{appendix.Alph1}%

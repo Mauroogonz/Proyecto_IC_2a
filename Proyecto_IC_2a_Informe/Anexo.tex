@@ -1,0 +1,122 @@
+\newcommand{\figuraNguyen}[1]{
+    \begin{figure}[H] % H fuerza la posición aquí
+        \centering
+        
+        % --- FILA 1: EQL, EQL-DIV, DSR (Rutas conocidas) ---
+        \begin{subfigure}[b]{0.5\textwidth}
+            \centering
+            % Ajusta la extensión (.png, .jpg, .pdf) si es necesario
+            \includegraphics[width=\linewidth]{"Fotos Proyecto/EQL/Nguyen-#1"} 
+            \caption{EQL}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{"Fotos Proyecto/EQL-DIV/Nguyen-#1"}
+            \caption{EQL-Div}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{"Fotos Proyecto/DSR/Nguyen-#1"}
+            \caption{DSR}
+        \end{subfigure}
+        
+        \vspace{1em} % Espacio vertical entre filas
+        
+        % --- FILA 2: Phy-so, Ginn-Lp, Operon (Rutas asumidas) ---
+        % NOTA: Debes verificar que estas carpetas existan o cambiar la ruta aquí
+        %\begin{subfigure}[b]{0.5\textwidth}
+        %    \centering
+        %    \includegraphics[width=\linewidth]{"Fotos Proyecto/Phy-so/Nguyen-#1"}
+        %    \caption{Phy-so}
+        %\end{subfigure}
+        %\hfill
+        %\begin{subfigure}[b]{0.5\textwidth}
+        %    \centering
+        %    \includegraphics[width=\linewidth]{"Fotos Proyecto/Ginn-Lp/Nguyen-#1"}
+        %    \caption{Ginn-Lp}
+        %\end{subfigure}
+        %\hfill
+        %\begin{subfigure}[b]{0.5\textwidth}
+        %    \centering
+        %    \includegraphics[width=\linewidth]{"Fotos Proyecto/Operon/Nguyen-#1"}
+        %    \caption{Operon}
+        %\end{subfigure}
+        
+        \caption{Comparativa visual de modelos para el benchmark Nguyen-#1.}
+        \label{fig:nguyen#1}
+    \end{figure}
+}
+
+
+% --- INICIO DEL ANEXO ---
+\appendix
+\section{Resultados Visuales: Benchmarks Nguyen}
+
+En esta sección se presentan las comparativas visuales para los casos seleccionados de Nguyen utilizando los seis modelos estudiados.
+
+% Generación automática de las figuras
+% Solo necesitas llamar al comando con el número correspondiente
+
+\figuraNguyen{3}
+
+\figuraNguyen{5}
+
+\figuraNguyen{7}
+
+\figuraNguyen{8}
+
+
+\figuraNguyen{10}
+
+\figuraNguyen{12}
+
+\begin{figure}[H] % H fuerza la posición aquí
+        \centering
+        
+        % --- FILA 1: EQL, EQL-DIV, DSR (Rutas conocidas) ---
+        \begin{subfigure}[b]{0.5\textwidth}
+            \centering
+            % Ajusta la extensión (.png, .jpg, .pdf) si es necesario
+            \includegraphics[width=\linewidth]{"Fotos Proyecto/EQL/Bat-25"} 
+            \caption{EQL}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{"Fotos Proyecto/EQL-DIV/Bat-25"}
+            \caption{EQL-Div}
+        \end{subfigure}
+        \hfill
+        \begin{subfigure}[b]{0.5\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{"Fotos Proyecto/DSR/Bat-25"}
+            \caption{DSR}
+        \end{subfigure}
+        
+        \vspace{1em} % Espacio vertical entre filas
+        
+        % --- FILA 2: Phy-so, Ginn-Lp, Operon (Rutas asumidas) ---
+        % NOTA: Debes verificar que estas carpetas existan o cambiar la ruta aquí
+        %\begin{subfigure}[b]{0.5\textwidth}
+        %    \centering
+        %    \includegraphics[width=\linewidth]{"Fotos Proyecto/Phy-so/Bat-25"}
+        %    \caption{Phy-so}
+        %\end{subfigure}
+        %\hfill
+        %\begin{subfigure}[b]{0.5\textwidth}
+        %    \centering
+        %    \includegraphics[width=\linewidth]{"Fotos Proyecto/Ginn-Lp/Bat-25"}
+        %    \caption{Ginn-Lp}
+        %\end{subfigure}
+        %\hfill
+        %\begin{subfigure}[b]{0.5\textwidth}
+        %    \centering
+        %    \includegraphics[width=\linewidth]{"Fotos Proyecto/Operon/Bat-25"}
+        %    \caption{Operon}
+        %\end{subfigure}
+        
+        \caption{Comparativa visual de modelos para las baterías de 25 celdas.}
+        \label{fig:Bat25}
+    \end{figure}

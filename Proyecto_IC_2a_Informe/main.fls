@@ -479,8 +479,8 @@ INPUT ./main.toc
 INPUT ./main.toc
 INPUT main.toc
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmbx12.tfm
-OUTPUT main.toc
 INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
+OUTPUT main.toc
 INPUT ./main.lof
 INPUT ./main.lof
 INPUT main.lof
@@ -539,11 +539,11 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ts1-lmr8.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ts1-lmr6.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ts1-lmr5.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
-INPUT ./Captura de pantalla 2025-10-20 191357.png
-INPUT ./Captura de pantalla 2025-10-20 191357.png
-INPUT ./Captura de pantalla 2025-10-20 191357.png
-INPUT ./Captura de pantalla 2025-10-20 191357.png
-INPUT ./Captura de pantalla 2025-10-20 191357.png
+INPUT ./Fotos Proyecto/Tabla_Nguyen.png
+INPUT ./Fotos Proyecto/Tabla_Nguyen.png
+INPUT ./Fotos Proyecto/Tabla_Nguyen.png
+INPUT ./Fotos Proyecto/Tabla_Nguyen.png
+INPUT ./Fotos Proyecto/Tabla_Nguyen.png
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm
@@ -616,6 +616,95 @@ INPUT ./Captura de pantalla 2025-10-20 184649.png
 INPUT ./main.bbl
 INPUT ./main.bbl
 INPUT main.bbl
+INPUT ./Anexo.tex
+INPUT ./Anexo.tex
+INPUT ./Anexo.tex
+INPUT ./Anexo.tex
+INPUT Anexo.tex
+INPUT ./Fotos Proyecto/EQL/Nguyen-3.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-3.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-3.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-3.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-3.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-3.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-3.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-3.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-3.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-3.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-3.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-3.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-5.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-5.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-5.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-5.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-5.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-5.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-5.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-5.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-5.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-5.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-5.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-5.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-7.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-7.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-7.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-7.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-7.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-7.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-7.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-7.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-7.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-7.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-7.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-7.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-8.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-8.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-8.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-8.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-8.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-8.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-8.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-8.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-8.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-8.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-8.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-8.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-10.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-10.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-10.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-10.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-10.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-10.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-10.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-10.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-10.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-10.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-10.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-10.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-12.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-12.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-12.png
+INPUT ./Fotos Proyecto/EQL/Nguyen-12.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-12.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-12.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-12.png
+INPUT ./Fotos Proyecto/EQL-DIV/Nguyen-12.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-12.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-12.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-12.png
+INPUT ./Fotos Proyecto/DSR/Nguyen-12.png
+INPUT ./Fotos Proyecto/EQL/Bat-25.png
+INPUT ./Fotos Proyecto/EQL/Bat-25.png
+INPUT ./Fotos Proyecto/EQL/Bat-25.png
+INPUT ./Fotos Proyecto/EQL/Bat-25.png
+INPUT ./Fotos Proyecto/EQL-DIV/Bat-25.png
+INPUT ./Fotos Proyecto/EQL-DIV/Bat-25.png
+INPUT ./Fotos Proyecto/EQL-DIV/Bat-25.png
+INPUT ./Fotos Proyecto/EQL-DIV/Bat-25.png
+INPUT ./Fotos Proyecto/DSR/Bat-25.png
+INPUT ./Fotos Proyecto/DSR/Bat-25.png
+INPUT ./Fotos Proyecto/DSR/Bat-25.png
+INPUT ./Fotos Proyecto/DSR/Bat-25.png
 INPUT c:/texlive/2025/texmf-dist/tex/generic/stringenc/se-utf8.def
 INPUT c:/texlive/2025/texmf-dist/tex/generic/stringenc/se-utf8.def
 INPUT c:/texlive/2025/texmf-dist/tex/generic/stringenc/se-utf8.def
