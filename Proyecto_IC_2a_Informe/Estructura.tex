@@ -5,13 +5,14 @@
 % Relaciona con la búsqueda de modelos interpretables (EQL, Φ-SO, GINN-LP, etc.).
 % Cita los papers [1]–[9] entregados con el enunciado del proyecto.
 
-El descubrimiento automático de ecuaciones a partir de datos experimentales constituye un desafío central en la inteligencia computacional aplicada a las ciencias físicas y de la ingeniería. A diferencia de las aproximaciones empíricas o las redes neuronales convencionales de tipo \textit{black-box}, la regresión simbólica busca obtener expresiones analíticas explícitas que describan las relaciones subyacentes entre las variables del sistema, permitiendo interpretar los resultados, generalizar más allá del rango de entrenamiento y vincular las ecuaciones aprendidas con principios físicos conocidos.
+El descubrimiento automático de ecuaciones a partir de datos se ha consolidado como un problema central en la inteligencia computacional aplicada a las ciencias físicas y la ingeniería. Aunque la disponibilidad de grandes volúmenes de datos permite entrenar redes neuronales tradicionales con bajo error predictivo, su naturaleza de ``caja negra'' limita severamente su utilidad en contextos científicos donde la interpretabilidad y la validación física son prioritarias. Frente a este desafío, la Regresión Simbólica busca cerrar la brecha entre precisión y comprensión, generando expresiones analíticas explícitas que no solo describen los datos, sino que también revelan las leyes subyacentes y permiten una extrapolación robusta.
 
-Las redes neuronales tradicionales presentan una limitación fundamental en este contexto: si bien pueden alcanzar altos niveles de precisión, su estructura opaca impide comprender de manera directa qué relaciones han sido aprendidas, limitando su uso en entornos donde la interpretabilidad es esencial. En respuesta a este problema, se han desarrollado modelos orientados al aprendizaje simbólico de ecuaciones, donde la estructura de la red se define a partir de funciones matemáticas explícitas. Entre estos enfoques destaca el \textit{Equation Learner} (EQL) propuesto por Martius y Lampert~\cite{1}, el cual introduce capas con funciones elementales (\textit{id}, \textit{sin}, \textit{cos}, \textit{mult}) y un esquema de regularización basado en sparsity que induce representaciones algebraicamente compactas e interpretables. Este modelo ha sido posteriormente extendido a variantes como EQL$\div$~\cite{2}, que incorporan divisiones simbólicas para representar expresiones racionales.
+El presente proyecto realiza un estudio comparativo exhaustivo de métodos neuronales y evolutivos de vanguardia para la regresión simbólica. Se evalúan y contrastan seis arquitecturas con distintos compromisos entre capacidad de búsqueda y restricciones físicas: \textbf{Equation Learner (EQL)} y su variante con división (\textbf{EQL-Div}), el enfoque de aprendizaje por refuerzo \textbf{Deep Symbolic Regression (DSR)}, la optimización guiada por unidades físicas \textbf{PhySO}, la red interpretable para polinomios de Laurent \textbf{GINN-LP}, y el framework evolutivo de alto rendimiento \textbf{Operon}.
 
-En paralelo, otros enfoques como \textit{Physical Symbolic Optimization} (PhySO)~\cite{5} han propuesto integrar la búsqueda simbólica con principios físicos, restringiendo el espacio de soluciones mediante consistencia dimensional o información estructural conocida. Estos métodos combinan heurísticas simbólicas con aprendizaje automático para obtener expresiones más coherentes con las leyes de la física, sirviendo como un punto de comparación natural frente a modelos neuronales como EQL.
+La metodología experimental se estructura en dos escenarios complementarios. En primer lugar, se utilizan las funciones sintéticas del benchmark de \textbf{Nguyen} para cuantificar la capacidad de cada modelo de recuperar formas funcionales exactas y evaluar su comportamiento en extrapolación. En segundo lugar, se aborda un problema de ingeniería real: la modelación de transferencia de calor en \textbf{baterías de ion-litio}, buscando correlaciones para el número de Nusselt a partir de datos experimentales ruidosos.
 
-El presente proyecto se enmarca dentro de esta línea de investigación y tiene como propósito explorar la capacidad de los modelos neuronales de regresión simbólica para recuperar ecuaciones exactas y correlaciones físicas a partir de datos. Para ello, se utilizan los modelos EQL~\cite{1} y PhySO~\cite{5} sobre dos tipos de conjuntos de datos: (i) funciones sintéticas del benchmark de Nguyen~\cite{7}, con el objetivo de evaluar la precisión y la capacidad de extrapolación de las ecuaciones obtenidas, y (ii) datos experimentales asociados a los números de Nusselt, Reynolds y Prandtl provenientes de simulaciones CFD de baterías de litio~\cite{8,9}, con el fin de examinar la aplicabilidad de estos modelos en escenarios físicos reales. En conjunto, el estudio busca evaluar el potencial del EQL como herramienta base para el descubrimiento simbólico de ecuaciones, contrastando sus resultados con los de PhySO y analizando su capacidad para generar representaciones matemáticas interpretables y físicamente coherentes.
+El objetivo final de este informe es aportar una visión integrada sobre el desempeño práctico de estos métodos, analizando no solo métricas de error (NRMSE, $R^2$), sino también la parsimonia, legibilidad y plausibilidad física de las ecuaciones descubiertas. Con ello, se busca establecer criterios claros para la selección de modelos en aplicaciones futuras y evidenciar las fortalezas de los enfoques simbólicos frente a la aproximación numérica tradicional.
+
 
 
 
@@ -337,6 +338,27 @@ Los gráficos asociados a cada función del benchmark evaluada se presentan en e
     }
 \end{table}
 
+\begin{table}[H]
+    \centering
+    \caption{Ecuaciones recuperadas por los modelos para la función \textbf{Nguyen-[N]}.}
+    \begin{tabular}{lcccccccccccc}
+        \hline
+        \textbf{Modelo} & \textbf{Ecuación Recuperada} \\ \hline
+
+        EQL & $0.01*x^7 + 0.09*x^6 + 0.38*x^5 + 1.03*x^4 + 1.66*x^3 + 0.92*x^2 + 0.86*x$ \\ \hline
+
+        EQL-Div & $3.93*x*(0.43*x^2+ 0.36*x + 0.19)/(sin(x*(0.05*x^2 + 0.04*x + 0.02)) - 1)$ \\ \hline
+
+        PhySO & $1.09*x*exp(x*(1.11*x + 1.14)0.5)$ \\ \hline
+
+        GINN-LP & $0.10/x-0.53 - 0.05*x0.25 + 0.15*x4.95$ \\ \hline
+
+        DSR & $x^5 + x^4 + x^3 + x^2 + x$ \\ \hline
+
+        Operon & $x^5 + x^4 + x^3 + x^2 + x$ \\ \hline
+
+    \end{tabular}
+\end{table}
 
 
 \subsection{Caso de Baterías}
@@ -397,6 +419,24 @@ De forma paralela, se entrenaron los 6 modelos con los mismos datos dados para e
 % - Ventajas del enfoque simbólico frente a redes tradicionales.
 % - Limitaciones observadas: lentitud, sensibilidad, ruido.
 
+La comparación sistemática de los modelos sobre el benchmark de Nguyen y sobre el caso de baterías permite entender mejor sus capacidades de ajuste, extrapolación e interpretabilidad. En las funciones sintéticas, se observa que hay un grupo de métodos que logra recuperar casi exactamente la forma funcional original (en particular DSR y Operon), mientras que otros entregan aproximaciones de distinta calidad según la función. DSR y Operon alcanzan valores de $R^2 \approx 1{,}0$ y NRMSE casi nulos en todas las funciones evaluadas, y en las gráficas del anexo las curvas predichas prácticamente se confunden con las funciones verdaderas. Esto sugiere que, cuando se cuenta con tiempo de cómputo suficiente y una buena biblioteca de operadores, los enfoques de búsqueda global (aprendizaje por refuerzo en el caso de DSR y programación genética multiobjetivo en el caso de Operon) son muy efectivos para explorar el espacio de ecuaciones y converger a soluciones simbólicamente correctas.
+
+Phy-SO, en cambio, muestra un desempeño algo menor en términos de error pero bastante robusto. En la mayoría de los Nguyen analizados mantiene NRMSE del orden de $10^{-3}$–$10^{-2}$ y $R^2$ cercanos a 1, entregando expresiones compactas y coherentes con la física, como se ve por ejemplo en Nguyen-3 y Nguyen-7. Esto es coherente con su diseño, que restringe la búsqueda a combinaciones dimensionalmente válidas, privilegiando ecuaciones con estructura física razonable aunque a veces sacrifique algo de precisión numérica. Para aplicaciones de ingeniería, donde importa que la ecuación “haga sentido” además de ajustar bien, este tipo de restricción resulta muy valioso.
+
+En el caso específico de \textit{Equation Learner} (EQL) y su variante con divisiones (EQL-Div), el comportamiento es bastante más heterogéneo. Para funciones relativamente suaves o cercanas a su biblioteca de funciones (por ejemplo Nguyen-10 y, en menor medida, Nguyen-3 y Nguyen-8), se obtienen $R^2$ altos y NRMSE moderados, lo que indica que consiguen capturar la estructura básica de la ecuación teórica. Sin embargo, en funciones como Nguyen-5 y Nguyen-7 el desempeño se degrada fuertemente, con NRMSE altos y $R^2$ incluso negativos, lo que refleja problemas de extrapolación. Esto se puede explicar en parte por la arquitectura fija y la elección de hiperparámetros: se usó una red de tres capas simbólicas con ancho 1–2–1, un conjunto reducido de funciones (id, $\sin$, $\cos$, productos y divisiones) y una regularización L1 con $\lambda = 0{,}001$ común a todas las funciones. Esta configuración favorece ecuaciones simples y es cómoda de implementar, pero no necesariamente es la mejor para todas las funciones del benchmark; algunos casos quedan subajustados y otros sobreajustados. A pesar de esto, EQL tiene ventajas claras frente a una red MLP “de caja negra”: entrega directamente una expresión analítica que se puede revisar, simplificar y comparar con leyes físicas conocidas, y cuando la estructura aprendida es la correcta la extrapolación suele ser más razonable que en una red genérica.
+
+Los experimentos también muestran varias limitaciones prácticas de este enfoque simbólico. El entrenamiento de EQL es relativamente lento, requiere muchas épocas repartidas en fases (T0, T1 y T2) y en ocasiones hay que repetir corridas con distintas semillas para obtener ecuaciones satisfactorias. Además, el modelo es sensible a la  inicialización de pesos y al preprocesamiento (rango de entrada, normalización), de modo que pequeños cambios pueden producir expresiones simbólicas muy distintas. La presencia de ruido agrava este problema: en los Nguyen, donde el ruido es mínimo, EQL y EQL-Div pueden acercarse a la forma teórica, mientras que en el caso de baterías —donde los datos provienen de simulaciones y mediciones con incertidumbre— las expresiones tienden a ser más largas y menos estables, porque el modelo intenta “perseguir” variaciones que no siempre corresponden a estructura física real. En ese contexto, enfoques con restricciones físicas (Phy-SO) o con presión explícita sobre la complejidad (Operon) parecen manejar mejor el equilibrio entre ajustar los datos y mantener fórmulas interpretables.
+
+El comportamiento de GINN-LP ilustra bien las consecuencias de especializarse en una familia funcional concreta. Como está diseñado para polinomios de Laurent, funciona muy bien en funciones con estructura de ley de potencias o raíces (por ejemplo Nguyen-3 y Nguyen-8, donde obtiene $R^2$ cercanos a 0{,}99), pero su desempeño cae frente a funciones fuertemente trigonométricas como Nguyen-5, donde se ve obligado a aproximar oscilaciones mediante combinaciones de potencias, resultando en ecuaciones menos claras y con mayor error. Esto refuerza la idea de que elegir bien la familia funcional “implícita” en la arquitectura es clave: un modelo muy estructurado puede ser muy eficiente cuando el problema encaja con sus supuestos, pero poco flexible fuera de ese rango.
+
+En el caso de las baterías, la Tabla~4 muestra que todos los modelos que convergen tienen desempeños similares, con $R^2$ en torno a 0.98 y NRMSE del orden de $10^{-2}$. A diferencia del benchmark de Nguyen, aquí no existe una “verdad analítica” clara, por lo que pequeñas diferencias en error son menos importantes que la forma de las ecuaciones y su coherencia física. Phy-SO y Operon destacan por proponer correlaciones no lineales en función de Reynolds, Prandtl y el parámetro geométrico $K$, similares en espíritu a las relaciones clásicas de transferencia de calor. DSR tiende a ecuaciones más simples (casi lineales), fáciles de interpretar pero que podrían subestimar efectos no lineales. EQL y EQL-Div logran buen ajuste numérico, pero generan expresiones más largas y anidadas, que son menos cómodas de usar como correlaciones de diseño.
+
+Finalmente, es importante reconocer que la comparación se hizo con configuraciones de hiperparámetros fijadas a mano y, en lo posible, compartidas entre métodos. Esto permite una evaluación relativamente “justa” en términos de esfuerzo, pero probablemente no refleja el mejor desempeño posible de cada modelo. Algoritmos sensibles a la configuración, como EQL o GINN-LP, podrían mejorar bastante con una búsqueda sistemática de hiperparámetros, mientras que Operon podría beneficiarse de poblaciones más grandes o más generaciones. En conjunto, los resultados sugieren que no hay un “ganador absoluto”, sino diferentes compromisos según el tipo de problema: DSR y Operon destacan en benchmarks sintéticos con ecuación conocida, mientras que en problemas físicos con ruido los métodos con información física explícita o control explícito de complejidad parecen ofrecer el mejor equilibrio entre precisión, interpretabilidad y robustez.
+
+
+
+
+
 
 
 \newpage
@@ -425,8 +465,55 @@ Para mitigar esto, se propone la integración de marcos de optimización automá
 
 \newpage
 % ============================================================
-\section{Conclusiones Preliminares}
+\section{Conclusiones}
 % Resume los hallazgos más importantes.
 % - El modelo EQL logra alta precisión y recupera ecuaciones exactas.
 % - Presenta extrapolación robusta.
 % - Es aplicable a datos físicos con coherencia dimensional.
+
+
+El estudio realizado permite formarse una idea bastante clara de cómo se comportan en la
+práctica los distintos métodos de regresión simbólica evaluados. En el benchmark sintético
+de Nguyen, los resultados muestran que los enfoques de búsqueda global, en particular DSR
+y Operon, son los que mejor logran recuperar las ecuaciones objetivo: en la mayoría de las
+funciones alcanzan NRMSE muy bajos y $R^{2} \approx 1$, lo que indica que prácticamente
+reconstruyen la forma teórica. Esto sugiere que, cuando se cuenta con una buena biblioteca
+de operadores y suficiente tiempo de cómputo, estos métodos son capaces de explorar el
+espacio de expresiones de manera efectiva y encontrar soluciones simbólicamente correctas.
+
+Modelos con restricciones físicas explícitas, como Phy-SO, muestran un desempeño algo
+menor en términos de error, pero muy consistente. Aun sin llegar siempre al error casi nulo
+de DSR y Operon, mantienen NRMSE del orden de $10^{-3}$–$10^{-2}$ y $R^{2}$ cercanos a
+1, y además entregan ecuaciones compactas y coherentes con la física. Para aplicaciones de
+ingeniería, donde interesa tanto el ajuste como que la ecuación “haga sentido” físicamente,
+este tipo de comportamiento resulta especialmente valioso.
+
+En cambio, los modelos neuronales con arquitecturas simbólicas fijas, como EQL,
+EQL-Div y GINN-LP, presentan un rendimiento más irregular. Para algunas funciones de
+Nguyen, alineadas con la familia de funciones que cada modelo puede representar, se
+obtienen resultados competitivos y fórmulas razonables. Sin embargo, en otras funciones el
+error aumenta bastante, aparecen valores de $R^{2}$ incluso negativos y las expresiones se
+vuelven largas o poco interpretables. Esto refleja una fuerte dependencia de la elección de
+hiperparámetros (número de capas, funciones activas, regularización) y deja en evidencia
+que no existe una configuración única que funcione bien para todos los casos.
+
+En el problema de baterías, todos los modelos que convergieron entregan errores
+similares y valores de $R^{2}$ altos, por lo que el criterio deja de ser únicamente numérico
+y pasa a importar más la forma de las ecuaciones. En este escenario, Phy-SO y Operon
+tienden a producir correlaciones no lineales que se parecen a las clásicas relaciones entre
+Nu, Re, Pr y la geometría, mientras que EQL y EQL-Div generan expresiones más complejas
+y difíciles de usar como correlaciones de diseño. Esto refuerza la idea de que, en problemas
+reales con ruido, la interpretabilidad y la simplicidad terminan siendo tan importantes
+como reducir unas milésimas el NRMSE.
+
+En resumen, la regresión simbólica basada en métodos neuronales y evolutivos aparece
+como una herramienta prometedora para el descubrimiento de ecuaciones en ingeniería,
+pero su desempeño efectivo depende del tipo de problema, del diseño del modelo y del
+cuidado en la configuración experimental. Para funciones sintéticas donde se conoce la
+ecuación objetivo, DSR y Operon ofrecen la mejor combinación de precisión y sencillez. En
+problemas físicos con datos más ruidosos, enfoques con información física explícita
+(Phy-SO) o con control directo de la complejidad (Operon) parecen dar el equilibrio más
+razonable entre exactitud e interpretabilidad. Finalmente, modelos como EQL y GINN-LP
+siguen siendo alternativas interesantes, pero requieren una calibración cuidadosa de
+hiperparámetros y una adaptación más específica al dominio para poder mostrar todo su
+potencial.
