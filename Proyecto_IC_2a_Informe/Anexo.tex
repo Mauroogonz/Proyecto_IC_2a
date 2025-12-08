@@ -52,7 +52,9 @@
 
 % --- INICIO DEL ANEXO ---
 \appendix
-\section{Resultados Visuales: Benchmarks Nguyen}
+\section*{Anexo}
+
+\subsection*{Resultados Visuales: Benchmarks Nguyen}
 
 En esta sección se presentan las comparativas visuales para los casos seleccionados de Nguyen utilizando los seis modelos estudiados.
 
@@ -120,3 +122,138 @@ En esta sección se presentan las comparativas visuales para los casos seleccion
         \caption{Comparativa visual de modelos para las baterías de 25 celdas.}
         \label{fig:Bat25}
     \end{figure}
+
+
+\subsection*{Ecuaciones recuperadas}
+
+\begin{table}[H]
+    \centering
+    \caption{Ecuaciones recuperadas por los modelos para la función \textbf{Nguyen-3.}}
+    \begin{tabular}{lp{11cm}}
+        \hline
+        \textbf{Modelo} & \textbf{Ecuación Recuperada} \\ \hline
+        EQL & $0.01*x^7 + 0.09*x^6 + 0.38*x^5 + 1.03*x^4 + 1.66*x^3 + 0.92*x^2 + 0.86*x$ \\ \hline
+        EQL-Div & $3.93*x*(0.43*x^2+ 0.36*x + 0.19)/(sin(x*(0.05*x^2 + 0.04*x + 0.02)) - 1)$ \\ \hline
+        PhySO & $1.09*x*exp(x*(1.11*x + 1.14)0.5)$ \\ \hline
+        GINN-LP & $0.10/x-0.53 - 0.05*x0.25 + 0.15*x4.95$ \\ \hline
+        DSR & $x^5 + x^4 + x^3 + x^2 + x$ \\ \hline
+        Operon & $x^5 + x^4 + x^3 + x^2 + x$ \\ \hline
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \caption{Ecuaciones recuperadas por los modelos para la función \textbf{Nguyen-5}.}
+    \begin{tabular}{lp{11cm}}
+        \hline
+        \textbf{Modelo} & \textbf{Ecuación recuperada} \\ \hline
+        EQL &
+        $-0.51\,\cos^{4}(1.06\,x) - 0.49$ \\ \hline
+        EQL-Div &
+        $1.603 - \dfrac{2.132}{\cos\!\bigl(1.094\,\sin(0.574\,x - 0.311) - 0.27\bigr)}$ \\ \hline
+        PhySO &
+        $-x + x\,\dfrac{(7.44 - x)^{0.5}}{1.36 - x}$ \\ \hline
+        GINN-LP &
+        $0.08\,x^{-0.08} - 0.10\,x^{0.14} - 0.18\,x^{0.16}$ \\ \hline
+        DSR &
+        $\cos(x)\,\sin(x^{2}) - 1$ \\ \hline
+        Operon &
+        $\sin\!\bigl(\cos(\sin(-17.28))\,1.85\,x^{2}\bigr)\,\cos(x) - 1$ \\ \hline
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \caption{Ecuaciones recuperadas por los modelos para la función \textbf{Nguyen-7}.}
+    \begin{tabular}{lp{11cm}}
+        \hline
+        \textbf{Modelo} & \textbf{Ecuación recuperada} \\ \hline
+        EQL &
+        $\sin(0.56\,x) + 2.11\,\sin(0.56\,x^{2})$ \\ \hline
+        EQL-Div &
+        $\dfrac{0.068\,x + 0.188\,\sin(0.391\,x)}
+              {0.012\,x + 0.035\,\sin(0.391\,x) + 0.075}$ \\ \hline
+        PhySO &
+        $\log(2.02\,x^{2} + 1.21)$ \\ \hline
+        GINN-LP &
+        $-0.41\,x^{-1.11} - 0.66\,x^{0.86} + 0.38\,x^{2.44}$ \\ \hline
+        DSR &
+        $\log(x^{3} + x^{2} + x + 1)$ \\ \hline
+        Operon &
+        $\log(x^{3} + x^{2} + x + 1)$ \\ \hline
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \caption{Ecuaciones recuperadas por los modelos para la función \textbf{Nguyen-8}.}
+    \begin{tabular}{lp{11cm}}
+        \hline
+        \textbf{Modelo} & \textbf{Ecuación recuperada} \\ \hline
+        EQL &
+        $0.38\,x + 0.69\,\sin\!\bigl(0.42\,x + 0.89\,\sin(0.96\,x + 0.38) + 0.03\bigr) - 0.03$ \\ \hline
+        EQL-Div &
+        $\dfrac{0.0455\,x^{2} + 0.229\,x + 0.108 - 0.0714\,\cos(0.077\,x^{2} + 0.137\,x + 0.243)}
+               {0.027\,x^{2} + 0.136\,x + 0.174\,\cos(0.077\,x^{2} + 0.137\,x + 0.243)}$ \\ \hline
+        PhySO &
+        $x^{0.5}$ \\ \hline
+        GINN-LP &
+        $0.68\,x^{0.64}$ \\ \hline
+        DSR &
+        $x^{0.5}$ \\ \hline
+        Operon &
+        $x^{0.5}$ \\ \hline
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \caption{Ecuaciones recuperadas por los modelos para la función \textbf{Nguyen-10}.}
+    \begin{tabular}{lp{11cm}}
+        \hline
+        \textbf{Modelo} & \textbf{Ecuación recuperada} \\ \hline
+        EQL &
+        $2.02\,\sin(0.99\,x)\,\cos\!\bigl(1.80\,\sin(0.58\,y)\bigr)$ \\ \hline
+        EQL-Div &
+        $0.08\,(0.811 - 0.005\,x_2^{2})\,
+        \bigl(0.389\,\sin(0.904\,x_1 - 1.019\,x_2) + 0.932\,\sin(0.906\,x_1 + 1.007\,x_2) - 0.221\bigr)$\\
+        &\quad
+        $+\,3.254\,\sin\!\Bigl(0.431\,(0.811 - 0.005\,x_2^{2})\,
+        \bigl(0.389\,\sin(0.904\,x_1 - 1.019\,x_2) + 0.932\,\sin(0.906\,x_1 + 1.007\,x_2) - 0.221\bigr)$\\
+        &\qquad
+        $+\,0.196\,\sin(0.904\,x_1 - 1.019\,x_2) + 0.076\Bigr) + 0.018$ \\ \hline
+        PhySO &
+        $0.87\,x + y^{2}$ \\ \hline
+        GINN-LP &
+        $-0.22\,\dfrac{y^{0.007}}{x^{0.071}}
+        \;-\;0.225\,\dfrac{y^{0.026}}{x^{0.065}}
+        \;+\;0.932\,\dfrac{x^{1.48}}{y^{0.416}}$ \\ \hline
+        DSR &
+        $2\,\sin(x)\,\cos(y)$ \\ \hline
+        Operon &
+        $2\,\sin(x)\,\cos(y)$ \\ \hline
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \caption{Ecuaciones recuperadas por los modelos para la función \textbf{Nguyen-12}.}
+    \begin{tabular}{lp{11cm}}
+        \hline
+        \textbf{Modelo} & \textbf{Ecuación recuperada} \\ \hline
+        EQL & $0.94\,x^{2}(x - 0.51) + (0.18\,x + 1.52\,y)\,\bigl(0.04\,x + 0.33\,y - 0.85\,\cos(0.69\,\cos(0.67\,x + 0.18))\bigr)$ \\ \hline
+        EQL-Div & $\dfrac{0.00149\,x_2^{2} - 0.00288\,x_2 - 0.938\,\sin\!\bigl(-0.105\,x_2^{2} + 0.205\,x_2 + 0.185\,\sin(0.138\,x_1) + 0.531\,\cos(-0.906\,x_1^{2} + 0.4431\,x_1 + 0.122) - 0.25\bigr)}{0.00333\,x_2^{2} - 0.00644\,x_2 + 0.016\,\cos(-0.906\,x_1^{2} + 0.4431\,x_1 + 0.122) + 0.167}$\\
+        &\quad
+        $+\,0.00702\,\cos(-0.906\,x_1^{2} + 0.4431\,x_1 + 0.122) + 0.25$ \\ \hline
+        PhySO & $-0.15\,y^{0.5}\,(x + 3.47)$ \\ \hline
+        GINN-LP & $-0.69\,\dfrac{y^{1.19}}{x^{0.23}} + 0.44\,\dfrac{x^{0.35}}{y^{0.41}} + 0.45\,\dfrac{x^{0.42}}{y^{0.38}}$ \\ \hline
+        DSR & $\log\!\bigl(\cos(y^{0.25})\bigr)$ \\ \hline
+        Operon &$90 + 11\,\sin(-x) - 145\,\sin\bigl(\sin(-0.5\,x - 7) - 1\bigr) - y + 0.5\,y^{2} - 9\,x^{2}$ \\ \hline
+    \end{tabular}
+\end{table}
+
